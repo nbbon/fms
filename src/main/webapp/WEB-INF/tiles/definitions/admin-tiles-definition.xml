@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	
+	<definition name="baseLayout" template="/WEB-INF/tiles/template/admin_layoutTemplate.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="heading" value="" />
+		<put-attribute name="tagline" value="" />
+		<put-attribute name="admin_header" value="/WEB-INF/tiles/template/admin_header.jsp" />
+		<put-attribute name="admin_chat" value="/WEB-INF/tiles/template/admin_chat.jsp" />
+		<put-attribute name="admin_body" value="" />
+		<put-attribute name="admin_footer" value="/WEB-INF/tiles/template/admin_footer.jsp" />
+	</definition>
+
+ 	<definition name="admin/admin_home" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/admin_home.jsp" />
+	</definition>
+	<definition name="admin/doctor_list" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/doctor_list.jsp" />
+	</definition>
+		
+	<definition name="admin/add_doctor" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/add_doctor.jsp" />
+	</definition>
+	<definition name="admin/doctor_details" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/doctor_details.jsp" />
+	</definition> 	
+	
+</tiles-definitions>
