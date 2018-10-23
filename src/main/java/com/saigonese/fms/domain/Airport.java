@@ -9,7 +9,7 @@ import java.util.List;
 public class Airport {
 	@Id
 	@GeneratedValue
-	private int id;
+	private Long id;
 	@NotEmpty(message = "{msg.error.string.empty}")
 	private String airportCode;
 	@NotEmpty(message = "{msg.error.string.empty}")
@@ -37,19 +37,19 @@ public class Airport {
 	}
 
 	/* Getters & Setters */
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getAirportcode() {
+	public String getAirportCode() {
 		return airportCode;
 	}
 
-	public void setAirportcode(String airportcode) {
+	public void setAirportCode(String airportcode) {
 		this.airportCode = airportcode;
 	}
 
@@ -128,5 +128,9 @@ public class Airport {
 			success = true;
 		}
 		return success;
+	}
+	
+	public String getAirportDetail() {
+		return airportCode + " - " + airportName + " - " + city;
 	}
 }

@@ -18,31 +18,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/airplane")
+@RequestMapping(value = "/admin/airplane")
 public class AirplaneController {
 
     @Autowired
     private AirplaneService airplaneService;
 
-    @RequestMapping(value={"", "/"}, method=RequestMethod.GET)
-    public String defaultPath() {
-        return "redirect:/airplane/index";
-    }
-
-    @RequestMapping(value="/index")
-    public ModelAndView getAll() {
-        ModelAndView mav = new ModelAndView();
-        List<Airplane> airplanes = airplaneService.findAll();
-
-        mav.addObject("airplanes", airplanes);
-        mav.setViewName("/airplane/index");
-        return mav;
+    @RequestMapping(value={"", "/","/index"}, method=RequestMethod.GET)
+    public String airplanes(Model model) {
+    	model.addAttribute("airplanes", airplaneService.findAll());
+        return "admin/airplane";
     }
 
     @RequestMapping(value="/new")
 	public String newAirplaneForm(Model model){
 		model.addAttribute("airplane", new Airplane());
-		return "/airplane/new";
+		return "admin/airplane/new";
 	}
 
 	@RequestMapping(value = "/new", method=RequestMethod.POST)
@@ -50,32 +41,27 @@ public class AirplaneController {
 			BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("errors", bindingResult.getAllErrors());
-			return "/airplane/new";
+			return "admin/airplane/new";
 		}
 		airplane = airplaneService.save(airplane);
-		return "redirect:/airplane";
+		return "redirect:/admin/airplane";
 	}
 
-    @RequestMapping(value = "/{id}")
+    @RequestMapping(value = "/edit/{id}")
     public String get(@PathVariable long id, Model model) {
         model.addAttribute("airplane", this.airplaneService.findOne(id));
-        return "/airplane/detail";
+        return "admin/airplane/edit";
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public String update(@PathVariable long id, @RequestParam("update") String update, @Valid @ModelAttribute("airplane") Airplane airplane, BindingResult bindingResult, Model model) {
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
+    public String update(@PathVariable long id, @Valid @ModelAttribute("airplane") Airplane airplane, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("errors", bindingResult.getAllErrors());
-            return "/airplane/detail";
+            return "admin/airplane/edit";
         }
         this.airplaneService.save(airplane); // airline.id already set by binding
 
-        return "redirect:/airplane";
+        return "redirect:/admin/airplane";
     }
 
-//    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-//    public String delete(@PathVariable long id, @RequestParam("delete") String delete) {
-//        this.airplaneService.delete(id);
-//        return "redirect:/airplane";
-//    }
 }
