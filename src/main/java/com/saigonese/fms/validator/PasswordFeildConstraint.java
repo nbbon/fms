@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.saigonese.fms.validator;
 
 import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
