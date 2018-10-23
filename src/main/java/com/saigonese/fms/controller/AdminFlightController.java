@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping(value = "/admin/flight")
 public class AdminFlightController {
 
 	@Autowired
@@ -34,30 +35,30 @@ public class AdminFlightController {
 	@Autowired
 	private AirplaneService airplaneService;
 	
-	@RequestMapping(value = "/admin/flight", method = RequestMethod.GET)
+	@RequestMapping(value={"", "/","/index"}, method = RequestMethod.GET)
 	public String flights(Model model) {
 		model.addAttribute("flights", flightService.findAll());
 		return "admin/flight";
 	}
-/*
-	@RequestMapping(value = "/flight/new", method = RequestMethod.GET)
-	public String newFlightForm(@ModelAttribute("flight") Flight flight, Model model){
+
+	@RequestMapping(value = "/new", method = RequestMethod.GET)
+	public String newFlightForm(@ModelAttribute("flight")Flight flight, Model model){
 		model.addAttribute("airlines", airlineService.findAll());
 		model.addAttribute("airplanes", airplaneService.findAll());
 		model.addAttribute("airports", airportService.findAll());
-		return "/flight/new";
+		return "admin/flight/new";
 	}
 
-	@RequestMapping(value = "/flight/new", method = RequestMethod.POST)
+	@RequestMapping(value = "/new", method = RequestMethod.POST)
 	public String scheduleNewFlight(@Valid @ModelAttribute("flight") Flight flight,
 			BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("errors", bindingResult.getAllErrors());
-			return "/flight/new";
+			return "admin/flight/new";
 		}
 		flight = flightService.save(flight);
-		return "redirect:/";
-	}*/
+		return "redirect:/admin/flight";
+	}
 
 	@RequestMapping(value = "/admin/flight/{id}", method = RequestMethod.GET)
 	public String get(@PathVariable Long id, Model model){

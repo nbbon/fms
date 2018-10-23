@@ -22,7 +22,7 @@ public class Flight {
     private String flightnr;
     @NotNull(message = "{msg.error.required}")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "MM/dd/yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date departureDate;
     //	@DateTimeFormat(pattern = "MM/dd/yyyy")
 //	private LocalDate departureDate;
@@ -32,23 +32,23 @@ public class Flight {
     private Date departureTime;
     @NotNull(message = "{msg.error.required}")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "MM/dd/yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date arrivalDate;
     @NotNull(message = "{msg.error.required}")
     @Temporal(TemporalType.TIME)
     @DateTimeFormat(pattern = "HH:mm")
     private Date arrivalTime;
-    @Valid
-    @ManyToOne(cascade = CascadeType.ALL)
+   
+    @ManyToOne
     private Airline airline;
-    @Valid
-    @ManyToOne(cascade = CascadeType.ALL)
+    
+    @ManyToOne
     private Airport origin;
-    @Valid
-    @ManyToOne(cascade = CascadeType.ALL)
+    
+    @ManyToOne
     private Airport destination;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @Valid
+    @ManyToOne
+    
     private Airplane airplane;
     
     @OneToMany

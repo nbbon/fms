@@ -18,9 +18,69 @@
 		<put-attribute name="heading" value="Welcome, Admin" />
  		<put-attribute name="admin_body" value="/WEB-INF/views/admin/flight/index.jsp" />
 	</definition>
+	<definition name="admin/flight/new" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/flight/new.jsp" />
+	</definition>
 	<definition name="admin/flight/edit" extends="baseLayout">
 		<put-attribute name="title" value="Welcome, Admin"/>
 		<put-attribute name="heading" value="Welcome, Admin" />
  		<put-attribute name="admin_body" value="/WEB-INF/views/admin/flight/edit.jsp" />
+	</definition>	
+
+	<definition name="admin/airport" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/airport/index.jsp" />
+	</definition>
+
+	<definition name="admin/airport/edit" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/airport/edit.jsp" />
+	</definition>	
+
+	<definition name="admin/airport/new" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/airport/new.jsp" />
+	</definition>	
+
+
+	<definition name="admin/airplane" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/airplane/index.jsp" />
+	</definition>
+
+	<definition name="admin/airplane/edit" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/airplane/edit.jsp" />
+	</definition>	
+
+	<definition name="admin/airplane/new" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/airplane/new.jsp" />
+	</definition>	
+
+	<definition name="admin/airline" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/airline/index.jsp" />
+	</definition>
+
+	<definition name="admin/airline/edit" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/airline/edit.jsp" />
+	</definition>	
+
+	<definition name="admin/airline/new" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/airline/new.jsp" />
 	</definition>	
 </tiles-definitions>

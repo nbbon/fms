@@ -13,31 +13,22 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/airport")
+@RequestMapping(value = "/admin/airport")
 public class AirportController {
 
     @Autowired
     private AirportService airportService;
 
-    @RequestMapping(value={"", "/"}, method=RequestMethod.GET)
-    public String defaultPath() {
-        return "redirect:/airport/index";
-    }
-
-    @RequestMapping(value="/index")
-    public ModelAndView getAll() {
-        ModelAndView mav = new ModelAndView();
-        List<Airport> airports = airportService.findAll();
-
-        mav.addObject("airports", airports);
-        mav.setViewName("/airport/index");
-        return mav;
-    }
-
-    @RequestMapping(value="/new")
+    @RequestMapping(value = "", method = RequestMethod.GET)
+	public String flights(Model model) {
+		model.addAttribute("airports", airportService.findAll());
+		return "admin/airport";
+	}
+    
+    @RequestMapping(value="/new", method = RequestMethod.GET)
 	public String newAirplaneForm(Model model){
 		model.addAttribute("airport", new Airport());
-		return "/airport/new";
+		return "admin/airport/new";
 	}
 
 	@RequestMapping(value = "/new", method=RequestMethod.POST)
@@ -45,32 +36,26 @@ public class AirportController {
 			BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("errors", bindingResult.getAllErrors());
-			return "/airport/new";
+			return "admin/airport/new";
 		}
 		airport = airportService.save(airport);
-		return "redirect:/airport";
+		return "redirect:/admin/airport";
 	}
 
-    @RequestMapping(value = "/{id}")
-    public String get(@PathVariable long id, Model model) {
+    @RequestMapping(value = "/edit/{id}", method=RequestMethod.GET)
+    public String get(@PathVariable("id")Long id, Model model) {
         model.addAttribute("airport", this.airportService.findOne(id));
-        return "/airport/detail";
+        return "admin/airport/edit";
     }
 
-    @RequestMapping(value = "/{id}", method=RequestMethod.POST)
-    public String update(@PathVariable long id, @RequestParam("update") String update, @Valid @ModelAttribute("airport") Airport airport, BindingResult bindingResult, Model model) {
+    @RequestMapping(value = "/edit/{id}", method=RequestMethod.POST)
+    public String update(@PathVariable long id, @Valid @ModelAttribute("airport") Airport airport, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("errors", bindingResult.getAllErrors());
-            return "/airport/detail";
+            return "admin/airport/edit";
         }
         this.airportService.save(airport); // airport.id already set by binding
 
-        return "redirect:/airport";
+        return "redirect:/admin/airport";
     }
-
-//    @RequestMapping(value = "/{id}", method=RequestMethod.POST)
-//    public String delete(@PathVariable long id, @RequestParam("delete") String delete) {
-//        this.airportService.delete(id);
-//        return "redirect:/airport";
-//    }
 }
