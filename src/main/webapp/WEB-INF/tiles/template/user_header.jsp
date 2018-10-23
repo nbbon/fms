@@ -22,7 +22,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="<spring:url value='/' />">Admin Management</a>
+    <a class="navbar-brand" href="<spring:url value='/' />">Saigonese Flight</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,23 +31,11 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">            
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='airport' />">|&nbsp; Airport Info</a>
+                <a class="nav-link" href="<spring:url value='airport' />">|&nbsp; Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='airplane' />">|&nbsp; Airplane Info</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='airline' />">|&nbsp; Airline Info</a>
-            </li>
-            <li class="nav-item"> 
-             	<spring:url value="/dologout" var="logout_url" />
-				<a href="javascript: $('#logoutForm').submit();" class="nav-link"> 
-					|&nbsp; Logout
-				</a>
-				<form:form action="${logout_url}" class="form-horizontal"
-					method="POST" id="logoutForm">
-				</form:form>
-			</li>
+                <a class="nav-link" href="<spring:url value='airplane' />">|&nbsp; View Booking</a>
+            </li>            
         </ul>
         <form id="searchForm" method="post" action="flight/search" class="form-inline my-2 my-lg-0">
             <input id="criteriaInput" name="criteria" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

@@ -9,31 +9,18 @@
 		<put-attribute name="heading" value="" />
 		<put-attribute name="tagline" value="" />
 		<put-attribute name="admin_header" value="/WEB-INF/tiles/template/admin_header.jsp" />
-		<put-attribute name="admin_chat" value="/WEB-INF/tiles/template/admin_chat.jsp" />
 		<put-attribute name="admin_body" value="" />
 		<put-attribute name="admin_footer" value="/WEB-INF/tiles/template/admin_footer.jsp" />
 	</definition>
 
- 	<definition name="admin/admin_home" extends="baseLayout">
+ 	<definition name="admin/flight" extends="baseLayout">
 		<put-attribute name="title" value="Welcome, Admin"/>
 		<put-attribute name="heading" value="Welcome, Admin" />
- 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/admin_home.jsp" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/flight/index.jsp" />
 	</definition>
-	<definition name="admin/doctor_list" extends="baseLayout">
+	<definition name="admin/flight/edit" extends="baseLayout">
 		<put-attribute name="title" value="Welcome, Admin"/>
 		<put-attribute name="heading" value="Welcome, Admin" />
- 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/doctor_list.jsp" />
-	</definition>
-		
-	<definition name="admin/add_doctor" extends="baseLayout">
-		<put-attribute name="title" value="Welcome, Admin"/>
-		<put-attribute name="heading" value="Welcome, Admin" />
- 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/add_doctor.jsp" />
-	</definition>
-	<definition name="admin/doctor_details" extends="baseLayout">
-		<put-attribute name="title" value="Welcome, Admin"/>
-		<put-attribute name="heading" value="Welcome, Admin" />
- 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/doctor_details.jsp" />
-	</definition> 	
-	
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/admin/flight/edit.jsp" />
+	</definition>	
 </tiles-definitions>

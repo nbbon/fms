@@ -4,24 +4,35 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"  %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<title><spring:message code="msg.app.title"/></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content="Aha">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="<spring:url value='/resource/css/masterlayout.css' />"/>
+
 </head>
 <body>
-	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1><spring:message code="welcome"/></h1>
-				<h4 style="padding: 6px 12px;" class="pull-right"><a href="?language=en_US">English</a>|<a href="?language=es_ES">Spanish</a></h4>
-			</div>
-		</div>
-	</section>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="<spring:url value='/' />">Welcome Flight Management</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+</nav>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <div class="container">
     <div class="row">
-		<div class="col-md-4 col-md-offset-4">
+		<div class="col-md-4 mx-auto">
     		<div class="panel panel-default">
 			  	<div class="panel-heading">
 			    	<h3 class="panel-title"><spring:message code="pleaseSignin"/></h3>
@@ -49,4 +60,11 @@
 		</div>
 	</div>
 </div>
+
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted">Prof. Joe Bruen ::: Saigonese Group (CS545)</span><span style="float:right;"
+                                                                                        class="text-muted">&copy October 2018</span>
+    </div>
+</footer>
 </body>

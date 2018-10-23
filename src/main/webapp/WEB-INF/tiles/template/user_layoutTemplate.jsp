@@ -7,8 +7,8 @@
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<tiles:insertAttribute name="admin_header" />
-<tiles:insertAttribute name="admin_body" />
-<tiles:insertAttribute name="admin_footer" />	
+<tiles:insertAttribute name="user_header" />
+<tiles:insertAttribute name="user_body" />
+<tiles:insertAttribute name="user_footer" />	
 	
 
