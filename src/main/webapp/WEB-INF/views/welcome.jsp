@@ -16,13 +16,13 @@
 	href="<spring:url value='/resource/css/chat.css'/>"/>	
 <link rel="stylesheet" 
 	href="<spring:url value='/resource/css/modelless.css'/>"/>	
-<title><spring:message code="welcome"/></title>
+<title><spring:message code="msg.app.title"/></title>
 </head>
 <body>
 	<section>
 		<div class="jumbotron">
 			<div class="container">
-				<h1 class="col-sm-10"><spring:message code="msg.welcome"/></h1>
+				<h1 class="col-sm-10"><spring:message code="msg.label.welcome"/></h1>
 				<h4 class="col-sm-2"><a href="?language=en_US">English</a>|<a href="?language=es_ES">Spanish</a></h4>
 			</div>
 			
@@ -38,9 +38,9 @@
 					class="btn btn-default"> <span
 					class="glyphicon-hand-left glyphicon"></span><spring:message code='makeAppointment'/>
 				</a> --%>
-				<a href="<spring:url value='/reservation' />"
+				<a href="<spring:url value='/booking' />"
 					class="btn btn-default"> <span
-					class="glyphicon-hand-left glyphicon"></span><spring:message code='msg.label.reservation'/>
+					class="glyphicon-hand-left glyphicon"></span><spring:message code='msg.label.bookTicket'/>
 				</a>
 				<a href="javascript:openCustomerChat();"
 						class="btn btn-default"><spring:message code='msg.label.onlinesupport'/></a>

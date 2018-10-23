@@ -67,7 +67,7 @@ public class FlightController {
 			model.addAttribute("airlines", airlineService.findAll());
 			model.addAttribute("airplanes", airplaneService.findAll());
 			model.addAttribute("airports", airportService.findAll());
-			return "flight/edit";
+			return "/flight/edit";
 		}
 		
 		return "/";
