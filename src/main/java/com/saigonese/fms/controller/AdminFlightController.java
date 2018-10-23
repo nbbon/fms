@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class FlightController {
+public class AdminFlightController {
 
 	@Autowired
 	private FlightService flightService;
@@ -34,12 +34,12 @@ public class FlightController {
 	@Autowired
 	private AirplaneService airplaneService;
 	
-	@RequestMapping(value = "/flights", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/flight", method = RequestMethod.GET)
 	public String flights(Model model) {
 		model.addAttribute("flights", flightService.findAll());
-		return "flight/index";
+		return "admin/flight";
 	}
-
+/*
 	@RequestMapping(value = "/flight/new", method = RequestMethod.GET)
 	public String newFlightForm(@ModelAttribute("flight") Flight flight, Model model){
 		model.addAttribute("airlines", airlineService.findAll());
@@ -57,9 +57,9 @@ public class FlightController {
 		}
 		flight = flightService.save(flight);
 		return "redirect:/";
-	}
+	}*/
 
-	@RequestMapping(value = "/flight/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/flight/{id}", method = RequestMethod.GET)
 	public String get(@PathVariable Long id, Model model){
 		Flight flight = flightService.findOne(id);
 		if (flight != null) {
@@ -67,13 +67,13 @@ public class FlightController {
 			model.addAttribute("airlines", airlineService.findAll());
 			model.addAttribute("airplanes", airplaneService.findAll());
 			model.addAttribute("airports", airportService.findAll());
-			return "flight/edit";
+			return "admin/flight/edit";
 		}
 		
-		return "/";
+		return "admin/flights";
 	}
 
-	@RequestMapping(value= "/flight", method = RequestMethod.POST)
+/*	@RequestMapping(value= "/flight", method = RequestMethod.POST)
 	public String editFlight(@Valid @ModelAttribute("flight") Flight flight,
 							 BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
@@ -82,7 +82,7 @@ public class FlightController {
 		}
 		flightService.save(flight); // flight.id already set by binding
 		return "redirect:/";
-	}
+	}*/
 
 	// Only search by departure date
 //	@PostMapping(value = "/flight/search")
