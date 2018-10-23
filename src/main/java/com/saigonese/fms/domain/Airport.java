@@ -11,7 +11,7 @@ public class Airport {
 	@GeneratedValue
 	private int id;
 	@NotEmpty(message = "{msg.error.string.empty}")
-	private String airportcode;
+	private String airportCode;
 	@NotEmpty(message = "{msg.error.string.empty}")
 	private String airportName;
 	@NotEmpty(message = "{msg.error.string.empty}")
@@ -30,7 +30,7 @@ public class Airport {
 	}
 
 	public Airport(String airportcode, String airportName, String city, String country) {
-		this.airportcode = airportcode;
+		this.airportCode = airportcode;
 		this.airportName = airportName;
 		this.city = city;
 		this.country = country;
@@ -46,11 +46,11 @@ public class Airport {
 	}
 
 	public String getAirportcode() {
-		return airportcode;
+		return airportCode;
 	}
 
 	public void setAirportcode(String airportcode) {
-		this.airportcode = airportcode;
+		this.airportCode = airportcode;
 	}
 
 	public String getAirportName() {
