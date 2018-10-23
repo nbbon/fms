@@ -10,7 +10,7 @@
 		<put-attribute name="tagline" value="" />
 		<put-attribute name="user_header" value="/WEB-INF/tiles/template/user_header.jsp" />
 		<put-attribute name="user_body" value="" />
-		<put-attribute name="user_footer" value="/WEB-INF/tiles/template/admin_footer.jsp" />
+		<put-attribute name="user_footer" value="/WEB-INF/tiles/template/user_footer.jsp" />
 	</definition>
 
  	<definition name="flight/index" extends="baseUserLayout">

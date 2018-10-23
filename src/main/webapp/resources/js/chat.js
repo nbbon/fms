@@ -2,12 +2,12 @@
 var ME = $('#me').val(); 
 var OTHER = $('#other').val();
 //console.log(MYSELF);
-var socket = new SockJS("/ocr/ws");
+var socket = new SockJS("/fms/ws");
 var stompClient = Stomp.over(socket);
 
 // Callback function to be called when stomp client is connected to server
 var connectCallback = function() {
-  stompClient.subscribe('/topic/chat', renderMessage);
+  stompClient.subscribe('/topic/booking', renderMessage);
 }; 
 
 // Render price data from server into HTML, registered as callback
@@ -53,11 +53,8 @@ $('#chatDialog').on('shown.bs.modal', function () {
     $('#chatBtn').removeClass('blink');
 })  
 
-function openCustomerChat() {	
-	$('#chatDialog').modal({
-		show: 'true',
-		modal: false
-	});
+function openOnlineSupport() {	
+	$('#chatDialog').modal('show');
 }
 function sendMessage(form) {
 	var message = $('#chatMessage').val();	

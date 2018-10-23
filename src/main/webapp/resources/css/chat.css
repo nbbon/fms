@@ -1,5 +1,13 @@
 @charset "ISO-8859-1";
 
+#chatDialog {
+    width: 400px;
+}
+
+#chatMessageTitle {
+    width: 100%;
+}
+
 #chatMessageContainer.container {
     border: 2px solid #dedede;
     background-color: #f1f1f1;
@@ -43,11 +51,14 @@
     color: #999;
 }
 #chatMessage {
-	width: 100%;
+    width: 100%;
+}
+#chatMessageFooter {
+    display: block;
 }
 #chatMessageContainer {
-	height: 300x !important;
-	over-flow: scroll !important;
+    height: 300x !important;
+    over-flow: scroll !important;
 }
 .blink{
 	color: rgb (0, 137, 226);
