@@ -10,16 +10,16 @@ import com.saigonese.fms.service.BookingService;
 @Component
 public class BookingFlightControllerHelper {
 
-	@Autowired
-	BookingService bookingFlightService;
-	
+//	@Autowired
+//	BookingService bookingService;
+//	
 	public Long saveBooking(Booking booking) {
-		return bookingFlightService.saveBooking(booking);
+		return 0L; // bookingService.saveBooking(booking);
 	}
 	
 	public Flight validateFlight(String flightId) {
 		
-		return bookingFlightService.validateFlight(flightId);
+		return null; //bookingFlightService.validateFlight(flightId);
 		
 	}
 	

@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 import java.text.DateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 @Entity
@@ -49,6 +50,9 @@ public class Flight {
     @ManyToOne(cascade = CascadeType.ALL)
     @Valid
     private Airplane airplane;
+    
+    @OneToMany
+    private List<Booking> bookings;
 
     private static DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT,
             Locale.US);
@@ -211,7 +215,15 @@ public class Flight {
         this.airplane = airplane;
     }
 
-    @Override
+    public List<Booking> getBookings() {
+		return bookings;
+	}
+
+	public void setBookings(List<Booking> bookings) {
+		this.bookings = bookings;
+	}
+
+	@Override
     public String toString() {
         return "Flight{" +
                 "flightnr='" + flightnr + '\'' +
