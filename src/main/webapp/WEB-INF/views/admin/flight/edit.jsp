@@ -2,7 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <div class="container" style="width: 70%">
-	<form:form action="<spring:url value='/flight' />" method="post" modelAttribute="flight">
+	<spring:url value='/flight' var='actionURL' />
+	<form:form action="${actionURL}" method="post" modelAttribute="flight">
 	   <fieldset>
 	       <legend>Edit Flight</legend>
 	       <input type="hidden" name="Id" value="${flight.id}" />

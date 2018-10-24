@@ -126,6 +126,11 @@
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-extras</artifactId>
 		</dependency>
+		<!-- webflow support -->
+		<dependency>
+			<groupId>org.springframework.webflow</groupId>
+			<artifactId>spring-webflow</artifactId>
+		</dependency>
 	</dependencies>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:flow="http://www.springframework.org/schema/webflow-config"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow-config
+http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">	
+	
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+		<property name="flowRegistry" ref="bookingFlowRegistry" />
+	</bean>
+
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+		<property name="flowExecutor" ref="bookingFlowExecutor" />
+	</bean>
+
+	<flow:flow-executor id="bookingFlowExecutor" flow-registry="bookingFlowRegistry" />
+
+	<flow:flow-registry id="bookingFlowRegistry" base-path="WEB-INF/flows">
+		<flow:flow-location id="booking" path="/booking-flow.xml" />
+	</flow:flow-registry>
+
+</beans>
+		

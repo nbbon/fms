@@ -48,39 +48,7 @@
 						<form:input id="passportNumber" path="passport" type="text"
 							class="form:input-large" />
 					</div>
-				</div>
-
- 				<%-- <div class="form-group">
-					<label class="control-label col-lg-2" for="state">State</label>
-					<div class="col-lg-10">
-						<form:input id="state" path="address.state" type="text"
-							class="form:input-large" />
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="country">Country</label>
-					<div class="col-lg-10">
-						<form:input id="country" path="address.country" type="text"
-							class="form:input-large" />
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="zipCode">Zip Code</label>
-					<div class="col-lg-10">
-						<form:input id="zipCode" path="address.zipCode" type="text"
-							class="form:input-large" />
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="phoneNumber">Phone Number</label>
-					<div class="col-lg-10">
-						<form:input id="phoneNumber" path="phoneNumber" type="text"
-							class="form:input-large" />
-					</div>
-				</div> --%>
+				</div> 				
 
 				<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}"/>
 				

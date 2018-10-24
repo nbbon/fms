@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
+
+	<var name="booking" class="com.saigonese.fms.domain.Booking" />
+	
+	<action-state id="selectFlight">
+ 		<evaluate expression="bookingFlightControllerHelper.validateFlight(requestParameters.flightId)" result="booking.flight" />
+ 		<transition to="collectPassengerInfo" />
+		<transition to="InvalidFlightWarning"
+			on-exception="com.saigonese.fms.exception.InvalidFlightException" />		
+	</action-state>
+	
+	<view-state id="collectPassengerInfo" view="jsp/collectPassengerInfo.jsp" model="booking">
+		<transition on="customerInfoCollected" to="collectShippingDetail" />
+		<transition on="bookingCancelled" to="cancelBooking" validate= "false"/>
+	</view-state>
+	
+	<view-state id="InvalidFlightWarning">
+		<transition to="endState"/>
+	</view-state>
+	
+	<view-state id="thankCustomer" model="order">
+		<transition to="endState"/>
+	</view-state>
+
+	<end-state id="endState"/>	
+	<end-state id="cancelBooking" view = "jsp/bookingCancelled.jsp"/>		
+	
+	<global-transitions>
+		<transition on = "cancel" to="endState" />
+	</global-transitions>
+
+</flow>

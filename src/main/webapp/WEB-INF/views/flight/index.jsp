@@ -25,8 +25,8 @@
 					<td>${flight.destination.city}</td>
 					<td>${flight.arrivalDate}</td>
 					<td>${flight.arrivalTime}</td>
-					<td><a href="<spring:url value='/flight/${flight.id}'/>"
-						class="btn btn-default"><spring:message code="msg.label.detail" /></a></td>
+					<td><a href="<spring:url value='/booking?flightId=${flight.id}'/>"
+						class="btn btn-default"><spring:message code="msg.label.flight.book" /></a></td>
 				</tr>
 			</c:forEach>			
 		</tbody>

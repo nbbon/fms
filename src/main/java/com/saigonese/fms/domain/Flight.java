@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.time.LocalDate;
 import java.util.Date;
@@ -14,7 +15,10 @@ import java.util.List;
 import java.util.Locale;
 
 @Entity
-public class Flight {
+public class Flight implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
