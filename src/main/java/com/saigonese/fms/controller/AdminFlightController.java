@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.saigonese.fms.domain.Airline;
+import com.saigonese.fms.domain.Airplane;
+import com.saigonese.fms.domain.Airport;
 import com.saigonese.fms.domain.Category;
 import com.saigonese.fms.domain.Flight;
 import com.saigonese.fms.service.AirlineService;
