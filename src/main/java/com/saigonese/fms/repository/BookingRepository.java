@@ -5,7 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.packt.webstore.domain.Employee;
 import com.saigonese.fms.domain.Booking;
 
 /**
