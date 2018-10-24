@@ -3,13 +3,15 @@ package com.saigonese.fms.domain;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.saigonese.fms.validator.TimeFieldFormat;
+
 import javax.persistence.*;
 import javax.validation.Valid;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 
 import java.io.Serializable;
 import java.text.DateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -22,37 +24,41 @@ public class Flight implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    
     @NotEmpty(message = "{msg.error.string.empty}")
     private String flightnr;
+    
     @NotNull(message = "{msg.error.required}")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "MM/dd/yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Future(message = "{msg.error.date.future}")
     private Date departureDate;
-    //	@DateTimeFormat(pattern = "MM/dd/yyyy")
-//	private LocalDate departureDate;
+    
     @NotNull(message = "{msg.error.required}")
     @Temporal(TemporalType.TIME)
     @DateTimeFormat(pattern = "HH:mm")
     private Date departureTime;
+    
     @NotNull(message = "{msg.error.required}")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "MM/dd/yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date arrivalDate;
+    
     @NotNull(message = "{msg.error.required}")
     @Temporal(TemporalType.TIME)
     @DateTimeFormat(pattern = "HH:mm")
     private Date arrivalTime;
-    @Valid
-    @ManyToOne(cascade = CascadeType.ALL)
+   
+    @ManyToOne
     private Airline airline;
-    @Valid
-    @ManyToOne(cascade = CascadeType.ALL)
+    
+    @ManyToOne
     private Airport origin;
-    @Valid
-    @ManyToOne(cascade = CascadeType.ALL)
+    
+    @ManyToOne
     private Airport destination;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @Valid
+    @ManyToOne
+    
     private Airplane airplane;
     
     @OneToMany
@@ -65,29 +71,6 @@ public class Flight implements Serializable {
 
     /* Constructors */
     public Flight() {
-    }
-
-    public Flight(String flightnr, String departureDate, String departureTime,
-                  String arrivalDate, String arrivalTime) {
-        this.flightnr = flightnr;
-        //setDepartureDate(departureDate);
-        //setDepartureTime(departureTime);
-        //setArrivalDate(arrivalDate);
-        //setArrivalTime(arrivalTime);
-    }
-
-    public Flight(String flightnr, String departureDate, String departureTime,
-                  String arrivalDate, String arrivalTime, Airline airline,
-                  Airport origin, Airport destination, Airplane airplane) {
-        this.flightnr = flightnr;
-        //setDepartureDate(departureDate);
-        //setDepartureTime(departureTime);
-        //setArrivalDate(arrivalDate);
-        //setArrivalTime(arrivalTime);
-        this.airline = airline;
-        this.origin = origin;
-        this.destination = destination;
-        this.airplane = airplane;
     }
 
     /* Getters & Setters */

@@ -3,7 +3,7 @@
 
 <div class="col-lg-2">            
      <div class="list-group">
-         <a href="<spring:url value='/admin/flight/add'/>" class="list-group-item d-flex justify-content-between align-items-center">
+         <a href="<spring:url value='/admin/flight/new'/>" class="list-group-item d-flex justify-content-between align-items-center">
              <spring:message code="msg.label.flight.addNew" />
          </a>         
      </div>

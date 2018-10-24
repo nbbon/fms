@@ -10,7 +10,7 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 /**
  * 
- * @author Cong Khanh Tran - trancongkhanh@gmail.com
+ * @author Ba Bon Nguyen - bnguyen@mum.edu
  *
  *
  */
@@ -23,8 +23,9 @@ public class ChatController {
 	 * WebSocket Handler to add one stock
 	 */
 	@MessageMapping("/send")
-	@SendTo("/topic/chat")
+	@SendTo("/topic/booking")
 	public ChatMessage addMessage(ChatMessage message) throws Exception {
+//		System.out.println(message);
 		chatService.save(message);
 		return message;
 	}

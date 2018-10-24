@@ -90,4 +90,8 @@ public class Airplane {
 		}
 		return success;
 	}
+	
+	public String getSerialModel() {
+		return serialNumber + " - " + model;
+	}
 }

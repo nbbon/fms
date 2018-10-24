@@ -14,16 +14,16 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 
 /**
- * @author Vivian Samson
+ * @author Ba Bon Nguyen bnguyen@mum.edu
  *
  */
 @Target( { METHOD, FIELD, ElementType.TYPE, ANNOTATION_TYPE })
 @Retention(RUNTIME)
-@Constraint(validatedBy = PasswordFeildValidator.class)
+@Constraint(validatedBy = TimeFieldValidator.class)
 @Documented
-public @interface PasswordFeildConstraint {
+public @interface TimeFieldFormat {
 
-	String message() default "{PasswordNotValid}";
+	String message() default "{msg.error.format.time.invalid}";
 
     Class<?>[] groups() default {};
     

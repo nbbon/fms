@@ -23,7 +23,7 @@
  <p>
  
  <a href="<spring:url value='/' />"
-						class="btn btn-default"><spring:message code='home'/></a>
+						class="btn btn-default"><spring:message code='msg.label.home'/></a>
  </p>
 
 </center> 

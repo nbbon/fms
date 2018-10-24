@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<spring:url value='/resource/css/masterlayout.css' />"/>
+    <link rel="stylesheet" href="<spring:url value='/resource/css/chat.css'/>"/>
+    <link rel="stylesheet" href="<spring:url value='/resource/css/modelless.css'/>"/>
 
 </head>
 <body>
@@ -39,6 +41,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="<spring:url value='airline' />">|&nbsp; Airline Info</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:openOnlineSupport();"
+						class="btn btn-default">|&nbsp; <spring:message code='msg.label.onlinesupport'/></a>
+            </li> 
             <li class="nav-item"> 
              	<spring:url value="/dologout" var="logout_url" />
 				<a href="javascript: $('#logoutForm').submit();" class="nav-link"> 
