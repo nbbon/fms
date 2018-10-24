@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow xmlns="http://www.springframework.org/schema/webflow"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/webflow
-http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
 	<var name="booking" class="com.saigonese.fms.domain.Booking" />
 	
-	<action-state id="selectFlight">
+ 	<action-state id="selectFlight">
  		<evaluate expression="bookingFlightControllerHelper.validateFlight(requestParameters.flightId)" result="booking.flight" />
  		<transition to="collectPassengerInfo" />
 		<transition to="InvalidFlightWarning"
@@ -14,15 +14,25 @@ http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
 	</action-state>
 	
 	<view-state id="collectPassengerInfo" view="jsp/collectPassengerInfo.jsp" model="booking">
-		<transition on="customerInfoCollected" to="collectShippingDetail" />
+		<transition on="confirmationFlight" to="confirmationInfo" />
 		<transition on="bookingCancelled" to="cancelBooking" validate= "false"/>
 	</view-state>
 	
-	<view-state id="InvalidFlightWarning">
+	<view-state id="confirmationInfo" view="jsp/bookingConfirmation.jsp" model="booking">
+		<transition on="bookingConfirmed" to="processBooking" />
+		<transition on="backToPassengerInfo" to="collectPassengerInfo" validate= "false"/>
+	</view-state>
+	
+	<action-state id="processBooking">
+		<evaluate expression="bookingFlightControllerHelper.saveBooking(booking)" result="booking.id"/>
+		<transition to="thankCustomer" />
+	</action-state>
+	
+	<view-state id="InvalidFlightWarning" view = "jsp/invalidFlightWarning.jsp">
 		<transition to="endState"/>
 	</view-state>
 	
-	<view-state id="thankCustomer" model="order">
+	<view-state id="thankCustomer" model="booking" view = "jsp/thankCustomer.jsp">
 		<transition to="endState"/>
 	</view-state>
 
@@ -30,7 +40,7 @@ http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd">
 	<end-state id="cancelBooking" view = "jsp/bookingCancelled.jsp"/>		
 	
 	<global-transitions>
-		<transition on = "cancel" to="endState" />
+		<transition on = "cancel" to="cancelBooking" />
 	</global-transitions>
 
 </flow>

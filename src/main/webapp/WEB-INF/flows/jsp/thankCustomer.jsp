@@ -44,44 +44,16 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <div class="container">
-    <div class="row">  
-		<div class="col-md-6 mx-auto">
-			<form:form modelAttribute="booking.passenger" class="form-horizontal">
-				<fieldset>
-					<legend>Passenger Details</legend>
-	
-					<div class="form-group" >           
-			           <label for="firstName">First Name</label>          
-			           <form:errors path="firstName" cssClass="alert alert-danger" />
-			           <form:input path="firstName" cssClass="form-control"/>
-			       </div>	
-						
-				   <div class="form-group" >           
-			           <label for="lastName">Last Name</label>          
-			           <form:errors path="lastName" cssClass="alert alert-danger" />
-			           <form:input path="lastName" cssClass="form-control"/>
-			       </div>
-			       
-	         	   <div class="form-group" >           
-			           <label for="passportNumber">Passport Number</label>          
-			           <form:errors path="passportNumber" cssClass="alert alert-danger" />
-			           <form:input path="passportNumber" cssClass="form-control"/>
-			       </div>	 
-	
-	 				<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}"/>
-					
-					<div class="form-group">											
-						<button id="btnCancel" class="btn btn-default" name="_eventId_bookingCancelled">Cancel</button>
-						<input type="submit" id="btnAdd" class="btn btn-primary float-right"
-							value="Next" name="_eventId_confirmationFlight" />						
-					</div>
-	
-				</fieldset>
-			</form:form>
+	<section>
+		<div class="jumbotron">
+			<div class="container">
+				<h1 class="alert alert-info"> Thank you</h1>
+				<p>Thanks for the booking flight. Have a nice trip!</p>
+				<p>Your Confirmation Code is: <span class="text-success" style="font-size: 25px; font-weight: bold">${booking.confirmationCode}</span></p>
+				<a href="<spring:url value="/flights" />" class="btn btn-primary">Flights</a>			
+			</div>
 		</div>
-</div>
-<!-- /.row -->
-
+	</section>
 </div>
 <!-- /.container -->
 <footer class="footer">

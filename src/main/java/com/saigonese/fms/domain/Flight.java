@@ -57,8 +57,8 @@ public class Flight implements Serializable {
     
     @ManyToOne
     private Airport destination;
-    @ManyToOne
     
+    @ManyToOne    
     private Airplane airplane;
     
     @OneToMany
