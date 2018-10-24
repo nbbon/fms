@@ -4,29 +4,29 @@
 <div class="container" style="width: 70%">
 	<form:form action="new" method="post" modelAttribute="airport">
 	   <fieldset>
-	       <legend>New Airport</legend>
+	       <legend><spring:message code="msg.label.airport.addNew" /></legend>
 			<form:errors path="*" cssStyle="color:red;" />
 	       <div class="form-group" >           
-	           <label for="airportnr">Airport Code</label>          
+	           <label for="airportnr"><spring:message code="msg.label.airport.code" /></label>          
 	           <form:input path="airportCode" cssClass="form-control"/>
 	       </div>
 	       <div class="form-group" style="float:none;">
-	           <label for="airtportName">Airport Name</label>
+	           <label for="airtportName"><spring:message code="msg.label.airport.airportName" /></label>
 	           <form:input path="airportName" cssClass="form-control"/>
 	       </div>
 	       <div class="form-group" style="float:none;">
-	           <label for="city">City</label>
+	           <label for="city"><spring:message code="msg.label.airport.city" /></label>
 	           <form:input path="city" cssClass="form-control"/>
 	       </div>
 	       <div class="form-group" style="float:none;">
-	           <label for="country">Country</label>
+	           <label for="country"><spring:message code="msg.label.airport.country" /></label>
 	           <form:input path="country" cssClass="form-control"/>
 	       </div>
 	       
 	      
 	       <div style="float:right;">
-	            <a href="/" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
-	            <button id="btnNew" type="submit" name="edit" class="btn btn-outline-success">New</button>
+	            <a href="${pageContext.request.contextPath}/admin/airport" class="btn btn-outline-warning"><spring:message code="msg.label.flight.cancel" /></a>&nbsp;&nbsp;&nbsp;
+	            <button id="btnNew" type="submit" name="edit" class="btn btn-outline-success"><spring:message code="msg.label.btnNew" /></button>
 	        </div>
 	    </fieldset>
 	</form:form>

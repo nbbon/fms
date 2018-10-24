@@ -17,7 +17,8 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="<spring:url value='/resource/css/masterlayout.css' />"/>
+    
+    <link rel="stylesheet" href="<spring:url value='/resource/css/masterlayout.css'/>"/>
     <link rel="stylesheet" href="<spring:url value='/resource/css/chat.css'/>"/>
     <link rel="stylesheet" href="<spring:url value='/resource/css/modelless.css'/>"/>
 
@@ -44,8 +45,14 @@
             </li>             
         </ul>
         <form id="searchForm" method="post" action="flight/search" class="form-inline my-2 my-lg-0">
-            <input id="criteriaInput" name="criteria" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><spring:message code='msg.label.search'/></button>
+        	<ul class="navbar-nav mr-auto">    
+				 <li class="nav-item">
+                	<a class="nav-link" href="?language=en">English</a>
+            	</li> 
+            	<li class="nav-item">
+                	<a class="nav-link" href="?language=vi_VN">Việt Nam</a>
+            	</li>
+			</ul>
         </form>
     </div>
 </nav>

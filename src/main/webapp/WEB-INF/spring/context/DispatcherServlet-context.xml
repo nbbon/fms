@@ -51,8 +51,9 @@
 		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
 		<property name="formatters">
 			<set>
-				<bean class="com.saigonese.fms.formatter.CategoryFormatter"></bean>
-				<bean class="com.saigonese.fms.formatter.TimespanFormatter"></bean>
+				<bean class="com.saigonese.fms.formatter.AirlineFormatter"></bean>
+				<bean class="com.saigonese.fms.formatter.AirplaneFormatter"></bean>
+				<bean class="com.saigonese.fms.formatter.AirportFormatter"></bean>
 			</set>
 		</property>
 	</bean>

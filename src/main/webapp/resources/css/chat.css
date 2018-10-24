@@ -4,8 +4,9 @@
     width: 400px;
 }
 
-#chatMessageTitle {
+#chatModalTitle {
     width: 100%;
+    display: block;
 }
 
 #chatMessageContainer.container {
@@ -53,12 +54,13 @@
 #chatMessage {
     width: 100%;
 }
-#chatMessageFooter {
+#chatModalFooter {
     display: block;
+    width: 100%;
 }
 #chatMessageContainer {
     height: 300x !important;
-    over-flow: scroll !important;
+    overflow: scroll !important;
 }
 .blink{
 	color: rgb (0, 137, 226);

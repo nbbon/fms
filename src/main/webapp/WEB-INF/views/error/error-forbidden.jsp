@@ -11,10 +11,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><spring:message code='msg.error.403' /></title>
+<title>Access denied</title>
 </head>
 <body>
-
 	<center>
 
 		<img
@@ -25,8 +24,7 @@
 
 		<p>
 			<button type=button onclick=window.location.href="<spring:url value='/welcome'/>">
-				<spring:message code='msg.label.home' />
-			</button>
+				Home</button>
 		</p>
 
 	</center>

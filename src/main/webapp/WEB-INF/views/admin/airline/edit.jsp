@@ -15,8 +15,8 @@
 	       </div>
 	     
 	       <div style="float:right;">
-	            <a href="${pageContext.request.contextPath}/admin/airline" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
-	            <button id="btnEdit" type="submit" name="edit" class="btn btn-outline-success">Update</button>
+	            <a href="${pageContext.request.contextPath}/admin/airline" class="btn btn-outline-warning"><spring:message code="msg.label.cancel" /></a>&nbsp;&nbsp;&nbsp;
+	            <button id="btnEdit" type="submit" name="edit" class="btn btn-outline-success"><spring:message code="msg.label.edit" /></button>
 	        </div>
 	    </fieldset>
 	</form:form>

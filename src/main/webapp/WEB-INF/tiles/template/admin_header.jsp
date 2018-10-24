@@ -24,7 +24,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="<spring:url value='/' />">Admin Management</a>
+    <a class="navbar-brand" href="<spring:url value='/' />"><spring:message code="adminWelcome" /></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,13 +33,13 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">            
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='airport' />">|&nbsp; Airport Info</a>
+                <a class="nav-link" href="<spring:url value='/admin/airport' />">|&nbsp; <spring:message code="msg.label.airport.info" /></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='airplane' />">|&nbsp; Airplane Info</a>
+                <a class="nav-link" href="<spring:url value='/admin/airplane' />">|&nbsp; <spring:message code="msg.label.airplane.info" /></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='airline' />">|&nbsp; Airline Info</a>
+                <a class="nav-link" href="<spring:url value='/admin/airline' />">|&nbsp; <spring:message code="msg.label.airline.info" /></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="javascript:openOnlineSupport();"
@@ -48,7 +48,7 @@
             <li class="nav-item"> 
              	<spring:url value="/dologout" var="logout_url" />
 				<a href="javascript: $('#logoutForm').submit();" class="nav-link"> 
-					|&nbsp; Logout
+					|&nbsp; <spring:message code="logout" />
 				</a>
 				<form:form action="${logout_url}" class="form-horizontal"
 					method="POST" id="logoutForm">
@@ -56,8 +56,15 @@
 			</li>
         </ul>
         <form id="searchForm" method="post" action="flight/search" class="form-inline my-2 my-lg-0">
-            <input id="criteriaInput" name="criteria" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+           
+			<ul class="navbar-nav mr-auto">    
+				 <li class="nav-item">
+                	<a class="nav-link" href="?language=en">English</a>
+            	</li> 
+            	<li class="nav-item">
+                	<a class="nav-link" href="?language=vi_VN">Việt Nam</a>
+            	</li>
+			</ul>
         </form>
     </div>
 </nav>
