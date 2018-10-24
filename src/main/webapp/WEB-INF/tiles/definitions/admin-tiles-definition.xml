@@ -82,5 +82,11 @@
 		<put-attribute name="title" value="Welcome, Admin"/>
 		<put-attribute name="heading" value="Welcome, Admin" />
  		<put-attribute name="admin_body" value="/WEB-INF/views/admin/airline/new.jsp" />
+	</definition>
+
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="title" value="Welcome, Admin"/>
+		<put-attribute name="heading" value="Welcome, Admin" />
+ 		<put-attribute name="admin_body" value="/WEB-INF/views/login.jsp" />
 	</definition>	
 </tiles-definitions>

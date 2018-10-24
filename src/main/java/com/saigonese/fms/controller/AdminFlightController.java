@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.saigonese.fms.domain.Category;
 import com.saigonese.fms.domain.Flight;
 import com.saigonese.fms.service.AirlineService;
 import com.saigonese.fms.service.AirplaneService;
@@ -38,7 +39,7 @@ public class AdminFlightController {
 		model.addAttribute("flights", flightService.findAll());
 		return "admin/flight";
 	}
-
+	
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public String newFlightForm(@ModelAttribute("flight")Flight flight, Model model){
 		model.addAttribute("airlines", airlineService.findAll());
