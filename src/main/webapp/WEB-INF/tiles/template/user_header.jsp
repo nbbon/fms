@@ -50,7 +50,7 @@
                 	<a class="nav-link" href="?language=en">English</a>
             	</li> 
             	<li class="nav-item">
-                	<a class="nav-link" href="?language=vi_VN">Viet Nam</a>
+                	<a class="nav-link" href="?language=vi_VN">Việt Nam</a>
             	</li>
 			</ul>
         </form>
