@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Locale;
 
 import com.saigonese.fms.domain.Flight;
+import com.saigonese.fms.exception.InvalidFlightException;
 import com.saigonese.fms.repository.FlightRepository;
 import com.saigonese.fms.repository.FlightSpecification;
 import com.saigonese.fms.service.FlightService;
@@ -47,6 +48,21 @@ public class FlightServiceImpl implements FlightService {
     public void delete(Long id) {
         flightRepository.delete(id);
     }
+    
+	@Override
+	public Flight validateFlight(String flightId) {
+		
+		long flightID = Long.parseLong(flightId);
+		
+		Flight flight = this.findOne(flightID);
+		
+		if(flight == null) {
+			throw new InvalidFlightException(flightId);
+		}
+		
+		return flight;
+
+	}
 
     @Override
     public List<Flight> search(String criteria) {

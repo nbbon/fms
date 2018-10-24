@@ -7,5 +7,6 @@ import java.util.List;
 public interface FlightService extends BaseService<Flight> {
 	
     List<Flight> search(String criteria);
+    public Flight validateFlight(String flightId);
 
 }

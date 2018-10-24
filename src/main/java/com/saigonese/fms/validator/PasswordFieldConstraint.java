@@ -19,15 +19,13 @@ import javax.validation.Payload;
  */
 @Target( { METHOD, FIELD, ElementType.TYPE, ANNOTATION_TYPE })
 @Retention(RUNTIME)
-@Constraint(validatedBy = PasswordEqualValidator.class)
+@Constraint(validatedBy = PasswordFieldValidator.class)
 @Documented
-public @interface PasswordsEqualConstraint {
-	
-	 String message() default "{PasswordNotMatch}";
+public @interface PasswordFieldConstraint {
 
-	    Class<?>[] groups() default {};
-	    
-	    public abstract Class<? extends Payload>[] payload() default {};
-	    
+	String message() default "{PasswordNotValid}";
 
+    Class<?>[] groups() default {};
+    
+    public abstract Class<? extends Payload>[] payload() default {};
 }

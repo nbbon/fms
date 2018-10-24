@@ -1,9 +1,11 @@
 package com.saigonese.fms.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -14,8 +16,17 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+/**
+ * 
+ * @author Quang Hiep Nguyen
+ *
+ */
+
 @Entity
-public class Booking {
+public class Booking implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue
 	private long id;
@@ -28,15 +39,16 @@ public class Booking {
 	private Date bookingDate;
 
 	@Valid
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Flight flight;
 	
-    @Valid
+	@Valid
     @ManyToOne(cascade = CascadeType.ALL)
     private Passenger passenger;
     
 	public Booking() {
-		
+		this.passenger = new Passenger();
+		this.flight = new Flight();
 	}
 
 	public long getId() {
