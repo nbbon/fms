@@ -35,6 +35,21 @@ public class AdminFlightController {
 	@Autowired
 	private AirplaneService airplaneService;
 	
+	@ModelAttribute("airlines")
+	private List<Airline> getAirlines(){
+		return airlineService.findAll();
+	}
+	
+	@ModelAttribute("airports")
+	private List<Airport> getAirports(){
+		return airportService.findAll();
+	}
+	
+	@ModelAttribute("airplanes")
+	private List<Airplane> getAirplanes(){
+		return airplaneService.findAll();
+	}
+
 	@RequestMapping(value={"", "/","/index"}, method = RequestMethod.GET)
 	public String flights(Model model) {
 		model.addAttribute("flights", flightService.findAll());
@@ -43,9 +58,7 @@ public class AdminFlightController {
 
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public String newFlightForm(@ModelAttribute("flight")Flight flight, Model model){
-		model.addAttribute("airlines", airlineService.findAll());
-		model.addAttribute("airplanes", airplaneService.findAll());
-		model.addAttribute("airports", airportService.findAll());
+		
 		return "admin/flight/new";
 	}
 
@@ -65,31 +78,26 @@ public class AdminFlightController {
 		Flight flight = flightService.findOne(id);
 		if (flight != null) {
 			model.addAttribute("flight", flight);
-			model.addAttribute("airlines", airlineService.findAll());
-			model.addAttribute("airplanes", airplaneService.findAll());
-			model.addAttribute("airports", airportService.findAll());
 			return "admin/flight/edit";
 		}
 		
 		return "admin/flights";
 	}
-
-/*	@RequestMapping(value= "/flight", method = RequestMethod.POST)
+	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public String get(@PathVariable long id, Model model) {
+        model.addAttribute("flight", this.flightService.findOne(id));
+        return "admin/flight/edit";
+    }
+	
+	@RequestMapping(value= "/edit/{id}", method = RequestMethod.POST)
 	public String editFlight(@Valid @ModelAttribute("flight") Flight flight,
 							 BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("errors", bindingResult.getAllErrors());
-			return "/flight/edit";
+			return "admin/flight/edit";
 		}
 		flightService.save(flight); // flight.id already set by binding
-		return "redirect:/";
-	}*/
+		return "redirect:/admin/flight";
+	}
 
-	// Only search by departure date
-//	@PostMapping(value = "/flight/search")
-//	@RequestMapping(value= "/flight", method = RequestMethod.POST)
-//	public String defaultSearchForFlights(@RequestParam String criteria, Model model) {
-//		model.addAttribute("flights", flightService.search(criteria));
-//		return "/flight/search";
-//	}
 }

@@ -5,7 +5,7 @@
 <div class="container" style="width: 70%">
 	<form:form action="${actionURL}" method="post" modelAttribute="airplane">
 	   <fieldset>
-	       <legend>Edit Airplane</legend>
+	       <legend><spring:message code="msg.label.airplane.edit" /></legend>
 	       <form:errors path="*" cssStyle="color:red;" />
 	       <input type="hidden" name="Id" value="${airplane.id}" />
 	
