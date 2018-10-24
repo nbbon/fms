@@ -12,6 +12,8 @@ import com.saigonese.fms.service.AirlineService;
 import com.saigonese.fms.service.AirplaneService;
 import com.saigonese.fms.service.AirportService;
 import com.saigonese.fms.service.FlightService;
+import com.saigonese.fms.validator.FlightScheduleValidator;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -51,6 +53,10 @@ public class FlightController {
 	@RequestMapping(value = "/flight/new", method = RequestMethod.POST)
 	public String scheduleNewFlight(@Valid @ModelAttribute("flight") Flight flight,
 			BindingResult bindingResult, Model model) {
+		
+		FlightScheduleValidator fsv = new FlightScheduleValidator();
+		fsv.validate(flight, bindingResult);
+		
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("errors", bindingResult.getAllErrors());
 			return "/flight/new";
@@ -76,6 +82,10 @@ public class FlightController {
 	@RequestMapping(value= "/flight", method = RequestMethod.POST)
 	public String editFlight(@Valid @ModelAttribute("flight") Flight flight,
 							 BindingResult bindingResult, Model model) {
+		
+		FlightScheduleValidator fsv = new FlightScheduleValidator();
+		fsv.validate(flight, bindingResult);
+		
 		if (bindingResult.hasErrors()) {
 			model.addAttribute("errors", bindingResult.getAllErrors());
 			return "/flight/edit";

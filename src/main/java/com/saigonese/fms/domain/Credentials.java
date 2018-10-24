@@ -6,8 +6,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -15,7 +13,7 @@ import javax.persistence.Transient;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.saigonese.fms.validator.PasswordFeildConstraint;
+import com.saigonese.fms.validator.PasswordFieldConstraint;
 import com.saigonese.fms.validator.PasswordsEqualConstraint;
 
 @Entity(name = "USERS")
@@ -30,7 +28,7 @@ public class Credentials {
 
 	@Column(name = "PASSWORD", nullable = false)
 	@NotEmpty
-	@PasswordFeildConstraint
+	@PasswordFieldConstraint
 	String password;
 	
 	@NotEmpty
