@@ -10,5 +10,6 @@ import com.saigonese.fms.domain.Flight;
  */
 public interface BookingService {
 	public Booking saveBooking(Booking booking);
+	public Booking findBookingByCC(String cCode);
 	
 }
