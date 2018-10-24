@@ -43,15 +43,87 @@
 </nav>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<div class="container">
-	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1 class="alert alert-danger"> Invalid Flight</h1>
-				<a href="<spring:url value="/flights" />" class="btn btn-primary">Flights</a>
-			</div>
-		</div>
-	</section>
+<div class="container" style="width: 60%">	
+	<div class="jumbotron" style="padding-top: 15px">				
+		<h2 class="alert alert-primary text-center">Booking Confirmation</h2>		
+		<h5 class="alert alert-info" role="alert">Passenger Information</h5>
+		
+		<form:form modelAttribute="order" class="form-horizontal">
+			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}" />
+			<table class="table table-borderless">			  
+			  <tbody>
+			    <tr>
+			      <th scope="row" class="w-50">First Name</th>
+			      <td>${booking.passenger.firstName}</td>			      
+			    </tr>
+			    <tr>
+			      <th scope="row">LastName</th>
+			      <td>${booking.passenger.lastName}</td>		      
+			    </tr>
+			    <tr>
+			      <th scope="row">Passport</th>
+			      <td colspan="2">${booking.passenger.passportNumber}</td>		     
+			    </tr>
+			  </tbody>
+			</table>
+		
+			<h5 class="alert alert-info" role="alert">Flight Information</h5>
+			<table class="table table-borderless">			  
+			  <tbody>
+			    <tr>
+			      <th scope="row"><spring:message code="msg.label.flight.flightnr" /></th>
+			      <td>${booking.flight.flightnr}</td>			      
+			    </tr>	
+			    	
+			    <tr>
+	      		  <th scope="row"><spring:message code="msg.label.flight.departureDate" /></th>
+			      <td>${booking.flight.departureDate}</td>			      
+			    </tr>	
+			    
+			    <tr>
+	      		  <th scope="row"><spring:message code="msg.label.flight.departureTime" /></th>
+			      <td>${booking.flight.departureTime}</td>			      
+			    </tr>	  
+			    
+			    <tr>
+	      		  <th scope="row"><spring:message code="msg.label.flight.arrivalDate" /></th>
+			      <td>${booking.flight.arrivalDate}</td>			      
+			    </tr>	
+			    
+			    <tr>
+	      		  <th scope="row" class="w-50"><spring:message code="msg.label.flight.arrivalTime" /></th>
+			      <td>${booking.flight.arrivalTime}</td>			      
+			    </tr>	
+			    
+			    <tr>
+	      		  <th scope="row" class="w-50"><spring:message code="msg.label.flight.airline" /></th>
+			      <td>${booking.flight.airline.airlineName}</td>			      
+			    </tr>	
+			    
+			    <tr>
+	      		  <th scope="row"><spring:message code="msg.label.flight.departure" /></th>
+			      <td>${booking.flight.origin.airportDetail}</td>			      
+			    </tr>
+			    
+		     	<tr>
+	      		  <th scope="row"><spring:message code="msg.label.flight.destination" /></th>
+			      <td>${booking.flight.destination.airportDetail}</td>			      
+			    </tr>			    
+			     
+			  </tbody>
+			</table>
+			
+			<p>&nbsp;</p>
+			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}" />
+			
+			<button id="btnCancel" class="btn btn-default" name="_eventId_cancel">Cancel</button>
+			
+			<button id="back" class="btn btn-warning" name="_eventId_backToPassengerInfo">Back</button>
+	
+			<button type="submit" class="btn btn-success float-right" name="_eventId_bookingConfirmed">Confirm</button>
+			
+		</form:form>		
+	</div>	
 </div>
 <!-- /.container -->
 <footer class="footer">

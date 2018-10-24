@@ -37,7 +37,7 @@
                 <a class="nav-link" href="<spring:url value='/' />">|&nbsp; <spring:message code='msg.label.home'/></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='airplane' />">|&nbsp; My Booking</a>
+                <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; My Booking</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="javascript:openOnlineSupport();"
@@ -45,8 +45,14 @@
             </li>             
         </ul>
         <form id="searchForm" method="post" action="flight/search" class="form-inline my-2 my-lg-0">
-            <input id="criteriaInput" name="criteria" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><spring:message code='msg.label.search'/></button>
+        	<ul class="navbar-nav mr-auto">    
+				 <li class="nav-item">
+                	<a class="nav-link" href="?language=en">English</a>
+            	</li> 
+            	<li class="nav-item">
+                	<a class="nav-link" href="?language=vi_VN">Viet Nam</a>
+            	</li>
+			</ul>
         </form>
     </div>
 </nav>

@@ -73,7 +73,7 @@
 					<div class="form-group">											
 						<button id="btnCancel" class="btn btn-default" name="_eventId_bookingCancelled">Cancel</button>
 						<input type="submit" id="btnAdd" class="btn btn-primary float-right"
-							value="Next" name="_eventId_passengerInfoCollected" />						
+							value="Next" name="_eventId_confirmationFlight" />						
 					</div>
 	
 				</fieldset>

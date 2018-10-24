@@ -3,10 +3,12 @@ package com.saigonese.fms.domain;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Airport {
+public class Airport implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;

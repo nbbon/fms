@@ -47,8 +47,10 @@
 	<section>
 		<div class="jumbotron">
 			<div class="container">
-				<h1 class="alert alert-danger"> Invalid Flight</h1>
-				<a href="<spring:url value="/flights" />" class="btn btn-primary">Flights</a>
+				<h1 class="alert alert-info"> Thank you</h1>
+				<p>Thanks for the booking flight. Have a nice trip!</p>
+				<p>Your Confirmation Code is: <span class="text-success" style="font-size: 25px; font-weight: bold">${booking.confirmationCode}</span></p>
+				<a href="<spring:url value="/flights" />" class="btn btn-primary">Flights</a>			
 			</div>
 		</div>
 	</section>

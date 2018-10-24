@@ -4,10 +4,12 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
+
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Airplane {
+public class Airplane implements Serializable {
 	@Id
 	@GeneratedValue
 	private long id;

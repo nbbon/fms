@@ -50,8 +50,11 @@ public class FlightServiceImpl implements FlightService {
     }
     
 	@Override
-	public Flight validateFlight(long flightId) {
-		Flight flight = this.findOne(flightId);
+	public Flight validateFlight(String flightId) {
+		
+		long flightID = Long.parseLong(flightId);
+		
+		Flight flight = this.findOne(flightID);
 		
 		if(flight == null) {
 			throw new InvalidFlightException(flightId);
