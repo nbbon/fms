@@ -29,10 +29,10 @@
 			<c:forEach items="${flights}" var="flight">
 				<tr>
 					<td>${flight.flightnr}</td>
-					<td>${flight.origin.city}</td>
+					<td>${flight.origin.ariportCode} - ${flight.origin.city}</td>
 					<td>${flight.departureDate}</td>
 					<td>${flight.departureTime}</td>
-					<td>${flight.destination.city}</td>
+					<td>${flight.destination.airportCode} - ${flight.destination.city}</td>
 					<td>${flight.arrivalDate}</td>
 					<td>${flight.arrivalTime}</td>
 					<td><a href="<spring:url value='/admin/flight/edit/${flight.id}'/>"
