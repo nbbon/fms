@@ -1,15 +1,19 @@
 # Online Support
 
 ## Introduction
-	We are going to design and implement a online Flight Management and Booking project. This is an engineering proof of concept. It is not a planned marketable project. The goal is to exercise the Spring MVC technology according to the Web Application Architecture (WAA) course guidelines to validate its use in future projects.
+	We are going to design and implement a online Flight Management and Booking project. This is an engineering proof of concept. It is not a planned marketable project. 
+	The goal is to exercise the Spring MVC technology according to the Web Application Architecture (WAA) course guidelines to validate its use in future projects.
+
 ## Purpose
-	Online Flight Management and Booking is a web application which provides users the ability to view/serach and make booking for a flight online. Once ticket reservation is made, user can be able to view their reservation information by providing the system their confirmation code [auto generated after successful making reservation], first name, last name and date of bird for security check. The system also provides back-office features for system administration purpose. These features are provided for authorized persons only. Who have to provide username and password for login 
+	Online Flight Management and Booking is a web application which provides users the ability to view and make booking for a flight online. Once the booking is made, user can be able to view their booking information by providing the system their confirmation code [auto generated after successful] for security check. 
+	The system also provides back-office features for system administration purpose. These features are provided for authorized persons only. Who have to provide username and password for authentication & authorization 
+
 ## Requirements
-- Search and View scheduled flights
-- Create, Update & Delete Airline, Airport, Airplane
+- View scheduled flights
+- Create, Update Airline, Airport, Airplane
 - Schedule new flight
 - Online support
-- Create & View reservation 
+- Create & View flight booking 
 
 ## Main Use-Cases
 ### [Admin]Login
@@ -105,18 +109,50 @@
 
 ## Sequence Diagrams
 
-### User make a booking
-### User view booking detail
-### Admin Login
-### Admin Logout
-### Admin create new Airline
-### Admin create new Airplane
-### Admin create new Airport
-### Admin update Airline
-### Admin update Airplane
-### Admin update Airport
-### Admin schedule new flight
-### Admin update flight
+### For User
+- Make a booking
+- View booking detail
+- Call online support
+
+### For Admin user
+- Login & Logout
+- Create & Update Airline, Airplane, Airport
+- Schedule and Update flight
+- Online support user
+
+## Technologies Used
+- Annotation
+- Data binding
+- Validation; Custom Validation
+- Custom Formatter, Custom Interceptor
+- Internationalization
+- Exception Handling
+- REST/Ajax two way; error handling
+- Security; Authentication & Authorization
+- Web Sockets
+- Web Flow
+- Tiles
+- Persistence in database [JPA]
+- DB: MySQL
+
+## Tools
+- Spring Tool Suite 4
+- Maven
+- GitHub
+- Tomcat
+
+## Project Guidelines
+
+### Setup MySQL
+- Create MySQL database schema "saigonese"
+- Grant schema previleges to root user
+- You may have to update username/password in "src/webapp/WEB-INF/spring/context/applicationContext.xml" [default used in the project: "root/root"]
+
+### To run the project
+- Import source into STS
+- Update project Maven dependencies (you may have to config add Maven dependencies into Deployment Assembly)
+- Build and run ("admin/admin" is default username/password for loging to admin back-office)
+
 
 
 
