@@ -15,3 +15,4 @@ target/
 .settings/org.jboss.tools.maven.apt.prefs
 .springBeans
 *.lock
+
