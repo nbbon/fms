@@ -13,7 +13,7 @@
 		<put-attribute name="user_footer" value="/WEB-INF/tiles/template/user_footer.jsp" />
 	</definition>
 
- 	<definition name="flights" extends="baseUserLayout">
+ 	<definition name="flight/index" extends="baseUserLayout">
 		<put-attribute name="title" value=""/>
 		<put-attribute name="heading" value="" />
  		<put-attribute name="user_body" value="/WEB-INF/views/flight/index.jsp" />
