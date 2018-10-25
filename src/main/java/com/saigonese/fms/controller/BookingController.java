@@ -41,6 +41,6 @@ public class BookingController {
 	@RequestMapping(value = "/booking/detail", method = RequestMethod.GET)
 	public String bookingDetail() {		
 		return "booking/detail";
-	}
+	}	
 
 }

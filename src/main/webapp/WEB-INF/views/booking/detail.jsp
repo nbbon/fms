@@ -3,27 +3,27 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <div class="container" style="width: 60%">	
 	<div class="jumbotron" style="padding-top: 15px">				
-		<h2 class="alert alert-primary text-center">Booking Information</h2>		
-		<h5 class="alert alert-info" role="alert">Passenger</h5>		
+		<h2 class="alert alert-primary text-center"><spring:message code="msg.mbking.title.bookingInfo" /></h2>		
+		<h5 class="alert alert-info" role="alert"><spring:message code="msg.mbking.title.passenger" /></h5>		
 
 		<table class="table table-borderless">			  
 		  <tbody>
 		    <tr>
-		      <th scope="row" class="w-50">First Name</th>
+		      <th scope="row" class="w-50"><spring:message code="msg.flow.lbl.fN" /></th>
 		      <td>${booking.passenger.firstName}</td>			      
 		    </tr>
 		    <tr>
-		      <th scope="row">LastName</th>
+		      <th scope="row"><spring:message code="msg.flow.lbl.lN" /></th>
 		      <td>${booking.passenger.lastName}</td>		      
 		    </tr>
 		    <tr>
-		      <th scope="row">Passport</th>
+		      <th scope="row"><spring:message code="msg.flow.lbl.pp" /></th>
 		      <td colspan="2">${booking.passenger.passportNumber}</td>		     
 		    </tr>
 		  </tbody>
 		</table>
 	
-		<h5 class="alert alert-info" role="alert">Flight</h5>
+		<h5 class="alert alert-info" role="alert"><spring:message code="msg.mbking.title.flight" /></h5>
 		<table class="table table-borderless">			  
 		  <tbody>
 		    <tr>

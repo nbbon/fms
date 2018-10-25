@@ -32,23 +32,14 @@
                 <a class="nav-link" href="<spring:url value='/' />">|&nbsp; <spring:message code='msg.label.home'/></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; My Booking</a>
+                <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; <spring:message code='msg.label.mybooking'/></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="javascript:openOnlineSupport();"
 						class="btn btn-default">|&nbsp; <spring:message code='msg.label.onlinesupport'/></a>
             </li>             
         </ul>
-        <form id="searchForm" method="post" action="flight/search" class="form-inline my-2 my-lg-0">
-        	<ul class="navbar-nav mr-auto">    
-				 <li class="nav-item">
-                	<a class="nav-link" href="?language=en">English</a>
-            	</li> 
-            	<li class="nav-item">
-                	<a class="nav-link" href="?language=vi_VN">Việt Nam</a>
-            	</li>
-			</ul>
-        </form>
+       
     </div>
 </nav>
 <p>&nbsp;</p>
@@ -58,22 +49,22 @@
 		<div class="col-md-6 mx-auto">
 			<form:form modelAttribute="booking.passenger" class="form-horizontal">
 				<fieldset>
-					<legend>Passenger Details</legend>
+					<legend><spring:message code='msg.flow.title.pDetail'/></legend>
 	
 					<div class="form-group" >           
-			           <label for="firstName">First Name</label>          
+			           <label for="firstName"><spring:message code='msg.flow.lbl.fN'/></label>          
 			           <form:errors path="firstName" cssClass="alert alert-danger" />
 			           <form:input path="firstName" cssClass="form-control"/>
 			       </div>	
 						
 				   <div class="form-group" >           
-			           <label for="lastName">Last Name</label>          
+			           <label for="lastName"><spring:message code='msg.flow.lbl.lN'/></label>          
 			           <form:errors path="lastName" cssClass="alert alert-danger" />
 			           <form:input path="lastName" cssClass="form-control"/>
 			       </div>
 			       
 	         	   <div class="form-group" >           
-			           <label for="passportNumber">Passport Number</label>          
+			           <label for="passportNumber"><spring:message code='msg.flow.lbl.pp'/></label>          
 			           <form:errors path="passportNumber" cssClass="alert alert-danger" />
 			           <form:input path="passportNumber" cssClass="form-control"/>
 			       </div>	 
@@ -81,9 +72,9 @@
 	 				<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}"/>
 					
 					<div class="form-group">											
-						<button id="btnCancel" class="btn btn-default" name="_eventId_bookingCancelled">Cancel</button>
+						<button id="btnCancel" class="btn btn-default" name="_eventId_bookingCancelled"><spring:message code='msg.flow.btn.cancel'/></button>
 						<input type="submit" id="btnAdd" class="btn btn-primary float-right"
-							value="Next" name="_eventId_confirmationFlight" />						
+							value="<spring:message code='msg.flow.btn.next'/>" name="_eventId_confirmationFlight" />						
 					</div>
 	
 				</fieldset>
