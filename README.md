@@ -139,8 +139,10 @@
 - Spring Tool Suite 4
 - Maven
 - GitHub
+- Tomcat
 
 ## Project Guidelines
+
 ### Setup MySQL
 - Create MySQL database schema "saigonese"
 - Grant schema previleges to root user
@@ -149,8 +151,7 @@
 ### To run the project
 - Import source into STS
 - Update project Maven dependencies (you may have to config add Maven dependencies into Deployment Assembly)
-- Build and run
-- "admin/admin" is default username/password for loging to admin back-office
+- Build and run ("admin/admin" is default username/password for loging to admin back-office)
 
 
 
