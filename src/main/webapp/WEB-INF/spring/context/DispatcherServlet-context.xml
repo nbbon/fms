@@ -67,7 +67,9 @@
 		</bean>	 	
 		<mvc:interceptor>
 			<mvc:mapping path="/*"/>
-			<bean class="com.saigonese.fms.interceptor.NoticeInterceptor" />
+			<bean class="com.saigonese.fms.interceptor.NoticeInterceptor" >
+				<property name="messageAccessor" ref="messageAccessor"/> 
+			</bean>
 		</mvc:interceptor>	
 	</mvc:interceptors>
  

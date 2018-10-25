@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import java.io.Serializable;
 import java.util.List;
@@ -22,6 +23,7 @@ public class Airplane implements Serializable {
 	private String serialNumber;
 	@NotEmpty(message = "{msg.error.string.empty}")
 	private String model;
+	@NotNull(message = "{msg.error.required}")
 	@Range(min = 0,max = 853, message="{msg.error.range}")
 	private int capacity;
 	@OneToMany(mappedBy="airplane")

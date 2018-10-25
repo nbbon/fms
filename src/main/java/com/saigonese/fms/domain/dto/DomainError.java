@@ -1,7 +1,7 @@
 package com.saigonese.fms.domain.dto;
 
 public class DomainError {
-
+	
 	private String message;
 
 	public DomainError() {
