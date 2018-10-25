@@ -23,7 +23,7 @@ import javax.validation.Payload;
 @Documented
 public @interface PasswordsEqualConstraint {
 	
-	 String message() default "{PasswordNotMatch}";
+	 String message() default "{msg.error.password.unmatched}";
 
 	    Class<?>[] groups() default {};
 	    

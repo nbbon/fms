@@ -29,16 +29,16 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">            
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='airport' />">|&nbsp; Home</a>
+                <a class="nav-link" href="<spring:url value='/' />">|&nbsp; <spring:message code='msg.label.home'/></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='airplane' />">|&nbsp; View Booking</a>
-            </li>            
-        </ul>
-        <form id="searchForm" method="post" action="flight/search" class="form-inline my-2 my-lg-0">
-            <input id="criteriaInput" name="criteria" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+                <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; <spring:message code='msg.label.mybooking'/></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:openOnlineSupport();"
+						class="btn btn-default">|&nbsp; <spring:message code='msg.label.onlinesupport'/></a>
+            </li>             
+        </ul>      
     </div>
 </nav>
 <p>&nbsp;</p>
@@ -47,20 +47,21 @@
 	<section>
 		<div class="jumbotron">
 			<div class="container">
-				<h1 class="alert alert-info"> Thank you</h1>
-				<p>Thanks for the booking flight. Have a nice trip!</p>
-				<p>Your Confirmation Code is: <span class="text-success" style="font-size: 25px; font-weight: bold">${booking.confirmationCode}</span></p>
-				<a href="<spring:url value="/flights" />" class="btn btn-primary">Flights</a>			
+				<h1 class="alert alert-info"><spring:message code='msg.flow.title.thankyou'/></h1>
+				<p><spring:message code='msg.flow.title.niceTrip'/></p>
+				<p><spring:message code='msg.flow.title.cCode'/>: <span class="text-success" style="font-size: 25px; font-weight: bold">${booking.confirmationCode}</span></p>
+				<a href="<spring:url value="/flights" />" class="btn btn-primary"><spring:message code='msg.flow.title.flight'/></a>			
 			</div>
 		</div>
 	</section>
 </div>
 <!-- /.container -->
-<footer class="footer">
-    <div class="container">
-        <span class="text-muted">Prof. Joe Bruen ::: Saigonese Group (CS545)</span><span style="float:right;"
-                                                                                        class="text-muted">&copy October 2018</span>
-    </div>
+<footer id="footerContainer" class="footer">
+	<div class="container">
+		<span class="text-muted">Prof. Joe Bruen ::: Saigonese Group
+			(CS545)</span><span style="float: right;" class="text-muted">&copy
+			October 2018</span>
+	</div>
 </footer>
 
 <!-- Bootstrap core JavaScript

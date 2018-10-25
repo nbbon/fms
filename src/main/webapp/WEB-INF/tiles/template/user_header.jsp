@@ -17,7 +17,8 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="<spring:url value='/resource/css/masterlayout.css' />"/>
+    
+    <link rel="stylesheet" href="<spring:url value='/resource/css/masterlayout.css'/>"/>
     <link rel="stylesheet" href="<spring:url value='/resource/css/chat.css'/>"/>
     <link rel="stylesheet" href="<spring:url value='/resource/css/modelless.css'/>"/>
 
@@ -36,26 +37,31 @@
                 <a class="nav-link" href="<spring:url value='/' />">|&nbsp; <spring:message code='msg.label.home'/></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; My Booking</a>
+                <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; <spring:message code='msg.label.mybooking'/></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="javascript:openOnlineSupport();"
 						class="btn btn-default">|&nbsp; <spring:message code='msg.label.onlinesupport'/></a>
             </li>             
         </ul>
-        <form id="searchForm" method="post" action="flight/search" class="form-inline my-2 my-lg-0">
-        	<ul class="navbar-nav mr-auto">    
-				 <li class="nav-item">
-                	<a class="nav-link" href="?language=en">English</a>
-            	</li> 
-            	<li class="nav-item">
-                	<a class="nav-link" href="?language=vi_VN">Viet Nam</a>
-            	</li>
-			</ul>
-        </form>
+        <c:if test="${not empty SpecialBlurb}">
+	        <ul class="navbar-nav mr-auto">  
+	        	<li class="nav-item">
+	               	<p class="text-center text-warning">${SpecialBlurb}</p>
+	           	</li>
+        	</ul>
+        </c:if>
+       	<ul class="navbar-nav mr-auto">    
+			<li class="nav-item">
+               	<a class="nav-link" href="?language=en">English</a>
+           	</li> 
+           	<li class="nav-item">
+               	<a class="nav-link" href="?language=vi_VN">Việt Nam</a>
+           	</li>
+		</ul>
     </div>
 </nav>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<div class="container">
+<div id="container" class="container">
     <div class="row">   

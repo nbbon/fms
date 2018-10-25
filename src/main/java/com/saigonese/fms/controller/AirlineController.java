@@ -1,7 +1,6 @@
 package com.saigonese.fms.controller;
 
 import com.saigonese.fms.domain.Airline;
-import com.saigonese.fms.domain.Airplane;
 import com.saigonese.fms.service.AirlineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

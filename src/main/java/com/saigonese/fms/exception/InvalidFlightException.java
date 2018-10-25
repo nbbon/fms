@@ -8,7 +8,7 @@ public class InvalidFlightException extends RuntimeException {
 		this.flightId = flightId;
 	}
 
-	public String getCartId() {
+	public String getFlightId() {
 		return flightId;
 	}
 }

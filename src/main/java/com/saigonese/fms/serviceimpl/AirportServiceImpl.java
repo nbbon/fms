@@ -5,7 +5,6 @@ import com.saigonese.fms.repository.AirportRepository;
 import com.saigonese.fms.service.AirportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

@@ -3,33 +3,25 @@
 // [0] has "" as a result of split 
 var contextRoot = "/" + window.location.pathname.split( '/' )[1];
 
-function addCategory() {
-//	$("#categoryForm").reset();
-	$("#categoryForm").show();
-	$("#categoryName").focus();
-	return false;
-}
-
-function saveCategory(){
+function saveAirplane(){
    	var dataToSend = JSON.stringify({
    		id: '0',
-   		categoryName: $("#categoryName").val(),
-   		description: ''
+   		serialNumber: $("#serialNumber").val(),
+		model: $("#model").val(),
+		capacity: $("#capacity").val(),
    	});
    	var csrfParam = $("#csrfParam").val();
    	var csrfValue = $("#csrfValue").val();
    	$.ajax({
+		url: contextRoot + '/admin/airplane/add?' + csrfParam + '=' + csrfValue,
 		type: 'POST',
-		url: contextRoot + '/admin/category/add?' + csrfParam + '=' + csrfValue,
 		dataType: "json",
  		data:dataToSend,
  		contentType: 'application/json',
-		success: function(category){
-			console.log('result', category);
+		success: function(airplane){
+			console.log('result', airplane);
 			$('#errors').html("");
 	 	    $('#result').show();
-//	 	    append category to combobox
-	 	    $("#doctorCategory").append(new Option(category.categoryName, category.id, true, true));
 	 	    setTimeout(function() {
 	 	    	$("#result").hide();
 	 	    }, 2000);
@@ -40,7 +32,7 @@ function saveCategory(){
 			$('#success').hide();
 			if (errorObject.responseJSON.errorType == "ValidationError") {
   			    var errorList = errorObject.responseJSON.errors;
- 	 	        $.each(errorList,  function(i,error) {			   
+ 	 	        $.each(errorList,  function(i, error) {			   
  		    		$("#errors").append( error.message + '<br>');
 		    	});
 			}

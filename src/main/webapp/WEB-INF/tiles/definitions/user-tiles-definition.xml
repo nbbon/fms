@@ -19,9 +19,15 @@
  		<put-attribute name="user_body" value="/WEB-INF/views/flight/index.jsp" />
 	</definition>
 	
-	 	<definition name="booking/myBooking" extends="baseUserLayout">
+ 	<definition name="booking/myBooking" extends="baseUserLayout">
 		<put-attribute name="title" value=""/>
 		<put-attribute name="heading" value="" />
  		<put-attribute name="user_body" value="/WEB-INF/views/booking/form_search.jsp" />
+	</definition>
+	
+ 	<definition name="booking/detail" extends="baseUserLayout">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="heading" value="" />
+ 		<put-attribute name="user_body" value="/WEB-INF/views/booking/detail.jsp" />
 	</definition>
 </tiles-definitions>

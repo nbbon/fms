@@ -24,7 +24,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="<spring:url value='/' />"><spring:message code="adminWelcome" /></a>
+    <a class="navbar-brand" href="<spring:url value='/' />"><spring:message code="msg.label.admin.welcome" /></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -48,27 +48,31 @@
             <li class="nav-item"> 
              	<spring:url value="/dologout" var="logout_url" />
 				<a href="javascript: $('#logoutForm').submit();" class="nav-link"> 
-					|&nbsp; <spring:message code="logout" />
+					|&nbsp; <spring:message code="msg.label.logout" />
 				</a>
 				<form:form action="${logout_url}" class="form-horizontal"
 					method="POST" id="logoutForm">
 				</form:form>
 			</li>
         </ul>
-        <form id="searchForm" method="post" action="flight/search" class="form-inline my-2 my-lg-0">
-           
-			<ul class="navbar-nav mr-auto">    
-				 <li class="nav-item">
-                	<a class="nav-link" href="?language=en">English</a>
-            	</li> 
-            	<li class="nav-item">
-                	<a class="nav-link" href="?language=vi_VN">Viet Nam</a>
-            	</li>
-			</ul>
-        </form>
+        <c:if test="${not empty SpecialBlurb}">
+	        <ul class="navbar-nav mr-auto">  
+	        	<li class="nav-item">
+	               	<p class="text-center text-warning">${SpecialBlurb}</p>
+	           	</li>
+	        </ul>
+        </c:if>
+        <ul class="navbar-nav mr-auto">    
+			 <li class="nav-item">
+               	<a class="nav-link" href="?language=en">English</a>
+           	</li> 
+           	<li class="nav-item">
+               	<a class="nav-link" href="?language=vi_VN">Việt Nam</a>
+           	</li>
+		</ul>
     </div>
 </nav>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<div class="container">
+<div id="container" class="container">
     <div class="row">   

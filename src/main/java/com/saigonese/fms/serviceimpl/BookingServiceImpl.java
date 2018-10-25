@@ -5,12 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.saigonese.fms.domain.Booking;
-import com.saigonese.fms.domain.Flight;
-import com.saigonese.fms.exception.InvalidFlightException;
 import com.saigonese.fms.repository.BookingRepository;
-import com.saigonese.fms.repository.FlightRepository;
 import com.saigonese.fms.service.BookingService;
-import com.saigonese.fms.service.FlightService;
 
 /**
  * 
@@ -31,5 +27,9 @@ public class BookingServiceImpl implements BookingService {
 		
 	}
 
+	@Override
+	public Booking findBookingByCC(String cCode) {
+		return bookingRepository.findBookingByConfirmationCode(cCode);
+	}
 
 }

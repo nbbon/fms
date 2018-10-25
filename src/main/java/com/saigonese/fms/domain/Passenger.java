@@ -3,12 +3,10 @@ package com.saigonese.fms.domain;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -25,7 +23,7 @@ public class Passenger implements Serializable {
 	
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 	
 	@NotEmpty(message = "{msg.error.required}")
 	private String firstName;
@@ -41,11 +39,11 @@ public class Passenger implements Serializable {
 		
 	}
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 	
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	

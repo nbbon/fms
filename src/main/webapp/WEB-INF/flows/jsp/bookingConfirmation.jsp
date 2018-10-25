@@ -29,45 +29,45 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">            
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='airport' />">|&nbsp; Home</a>
+                <a class="nav-link" href="<spring:url value='/' />">|&nbsp; <spring:message code='msg.label.home'/></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='airplane' />">|&nbsp; View Booking</a>
-            </li>            
-        </ul>
-        <form id="searchForm" method="post" action="flight/search" class="form-inline my-2 my-lg-0">
-            <input id="criteriaInput" name="criteria" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+                <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; <spring:message code='msg.label.mybooking'/></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:openOnlineSupport();"
+						class="btn btn-default">|&nbsp; <spring:message code='msg.label.onlinesupport'/></a>
+            </li>             
+        </ul>       
     </div>
 </nav>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <div class="container" style="width: 60%">	
 	<div class="jumbotron" style="padding-top: 15px">				
-		<h2 class="alert alert-primary text-center">Booking Confirmation</h2>		
-		<h5 class="alert alert-info" role="alert">Passenger Information</h5>
+		<h2 class="alert alert-primary text-center"><spring:message code='msg.flow.title.bC'/></h2>		
+		<h5 class="alert alert-info" role="alert"><spring:message code='msg.flow.title.pI'/></h5>
 		
 		<form:form modelAttribute="order" class="form-horizontal">
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}" />
 			<table class="table table-borderless">			  
 			  <tbody>
 			    <tr>
-			      <th scope="row" class="w-50">First Name</th>
+			      <th scope="row" class="w-50"><spring:message code='msg.flow.lbl.fN'/></th>
 			      <td>${booking.passenger.firstName}</td>			      
 			    </tr>
 			    <tr>
-			      <th scope="row">LastName</th>
+			      <th scope="row"><spring:message code='msg.flow.lbl.lN'/></th>
 			      <td>${booking.passenger.lastName}</td>		      
 			    </tr>
 			    <tr>
-			      <th scope="row">Passport</th>
+			      <th scope="row"><spring:message code='msg.flow.lbl.pp'/></th>
 			      <td colspan="2">${booking.passenger.passportNumber}</td>		     
 			    </tr>
 			  </tbody>
 			</table>
 		
-			<h5 class="alert alert-info" role="alert">Flight Information</h5>
+			<h5 class="alert alert-info" role="alert"><spring:message code='msg.flow.title.fI'/></h5>
 			<table class="table table-borderless">			  
 			  <tbody>
 			    <tr>
@@ -116,21 +116,22 @@
 			<p>&nbsp;</p>
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}" />
 			
-			<button id="btnCancel" class="btn btn-default" name="_eventId_cancel">Cancel</button>
+			<button id="btnCancel" class="btn btn-default" name="_eventId_cancel"><spring:message code='msg.flow.btn.cancel'/></button>
 			
-			<button id="back" class="btn btn-warning" name="_eventId_backToPassengerInfo">Back</button>
+			<button id="back" class="btn btn-warning" name="_eventId_backToPassengerInfo"><spring:message code='msg.flow.btn.back'/></button>
 	
-			<button type="submit" class="btn btn-success float-right" name="_eventId_bookingConfirmed">Confirm</button>
+			<button type="submit" class="btn btn-success float-right" name="_eventId_bookingConfirmed"><spring:message code='msg.flow.btn.confirm'/></button>
 			
 		</form:form>		
 	</div>	
 </div>
 <!-- /.container -->
-<footer class="footer">
-    <div class="container">
-        <span class="text-muted">Prof. Joe Bruen ::: Saigonese Group (CS545)</span><span style="float:right;"
-                                                                                        class="text-muted">&copy October 2018</span>
-    </div>
+<footer id="footerContainer" class="footer">
+	<div class="container">
+		<span class="text-muted">Prof. Joe Bruen ::: Saigonese Group
+			(CS545)</span><span style="float: right;" class="text-muted">&copy
+			October 2018</span>
+	</div>
 </footer>
 
 <!-- Bootstrap core JavaScript
