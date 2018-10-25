@@ -19,7 +19,6 @@ import com.saigonese.fms.domain.dto.DomainErrors;
  * Handler error for application
  * @author Ba Bon Nguyen - bnguyen@mum.edu
  *
- *
  */
 @ControllerAdvice
 public class ControllerExceptionHandler {
@@ -43,7 +42,6 @@ public class ControllerExceptionHandler {
 		DomainErrors errors = new DomainErrors();
 		errors.setErrorType("ValidationError");
 		for (FieldError fieldError : fieldErrors) {
-			System.out.println(fieldError);
 			DomainError error = new DomainError(messageAccessor.getMessage(fieldError));
 			errors.addError(error);
 		}

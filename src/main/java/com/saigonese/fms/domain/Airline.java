@@ -9,9 +9,13 @@ import java.util.List;
 
 @Entity
 public class Airline implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 	@NotEmpty(message = "{msg.error.string.empty}")
 	private String airlineName;
 	@OneToMany(mappedBy = "airline")
@@ -27,11 +31,11 @@ public class Airline implements Serializable {
 	}
 
 	/* Getters & Setters */
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

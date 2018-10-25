@@ -14,8 +14,7 @@
 
  	<mvc:annotation-driven validator="validator" conversion-service="conversionService"/>
 	<context:component-scan base-package="com.saigonese.fms" />
-	<mvc:annotation-driven />
- 	
+	
  	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
   		<property name="maxInMemorySize" value="10024000"/>
 	</bean>
@@ -65,7 +64,11 @@
     	<bean
 			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 			<property name="paramName" value="language" />
-		</bean>	 			
+		</bean>	 	
+		<mvc:interceptor>
+			<mvc:mapping path="/*"/>
+			<bean class="com.saigonese.fms.interceptor.NoticeInterceptor" />
+		</mvc:interceptor>	
 	</mvc:interceptors>
  
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"> 

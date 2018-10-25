@@ -22,7 +22,6 @@ public class Credentials {
 
 	@Id
 	@Column(name = "USERNAME", nullable = false, unique = true)
-
 	@NotEmpty
 	String username;
 

@@ -37,7 +37,7 @@
                 <a class="nav-link" href="<spring:url value='/' />">|&nbsp; <spring:message code='msg.label.home'/></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; My Booking</a>
+                <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; <spring:message code='msg.label.myBooking'/></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="javascript:openOnlineSupport();"

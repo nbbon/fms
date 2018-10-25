@@ -12,16 +12,16 @@ public class Authority {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ID")
-	private int id;
+	private Long id;
 
 	private String username;
   	@Column(name = "AUTHORITY", nullable = false)
  	private String authority;
  	
-	 public int getId() {
+	 public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
@@ -14,6 +15,7 @@ import com.saigonese.fms.domain.Flight;
  * @author Ba Bon Nguyen bnguyen@mum.edu
  *
  */
+@Component
 public class FlightScheduleValidator implements Validator {
 
 	@Override

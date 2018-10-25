@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.Formatter;
 import org.springframework.stereotype.Component;
 
-import com.saigonese.fms.domain.Airplane;
 import com.saigonese.fms.domain.Airport;
-import com.saigonese.fms.service.AirplaneService;
 import com.saigonese.fms.service.AirportService;
 
 @Component

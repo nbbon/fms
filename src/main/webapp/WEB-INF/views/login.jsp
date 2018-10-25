@@ -21,7 +21,7 @@
 </head> --%>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="<spring:url value='/' />">Welcome Flight Management</a>
+    <a class="navbar-brand" href="<spring:url value='/' />"><spring:message code="msg.label.welcome"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@
 			  	<div class="panel-body">
 			  	<c:if test="${not empty error}">
 					<div class="alert alert-danger">
-						<spring:message code="AbstractUserDetailsAuthenticationProvider.badCredentials" text="Bad Credentials"/><br />
+						<spring:message code="msg.error.badCredentials"/><br />
 					</div>
 				</c:if>
 			    	<form action="<spring:url value="/postlogin"></spring:url>" method="post">
@@ -51,7 +51,7 @@
 			    		<div class="form-group">
 			    			<input class=" form:input-large" placeholder="<spring:message code='msg.label.password'/>" name='password'  type="password" value="">
 			    		</div>
-			    		<input class="btn btn-lg btn-success btn-mini" type="submit" value="<spring:message code='login'/>">
+			    		<input class="btn btn-lg btn-success btn-mini" type="submit" value="<spring:message code='msg.label.login'/>">
 			    	</fieldset>
 			  			<security:csrfInput />
 			      	</form>
@@ -60,5 +60,3 @@
 		</div>
 	</div>
 </div>
-
-</body>

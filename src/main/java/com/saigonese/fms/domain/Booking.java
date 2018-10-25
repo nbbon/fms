@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -29,7 +28,7 @@ public class Booking implements Serializable {
 	
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 	
 	@NotNull(message = "{msg.error.required}")
 	private String confirmationCode;
@@ -51,11 +50,11 @@ public class Booking implements Serializable {
 		this.flight = new Flight();
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

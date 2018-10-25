@@ -1,6 +1,7 @@
 package com.saigonese.fms.flow;
 
 import java.util.Date;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -25,7 +26,7 @@ public class BookingFlightControllerHelper {
 	FlightService flightService;
 	
 	public long saveBooking(Booking booking) {
-		booking.setConfirmationCode("BBB12345");
+		booking.setConfirmationCode(getConfirmationCode());
 		booking.setBookingDate(new Date());
 		Booking booked = bookingService.saveBooking(booking);
 		if(booked != null)
@@ -39,5 +40,21 @@ public class BookingFlightControllerHelper {
 		return f;
 		
 	}
+	
+	protected String getConfirmationCode() {
+        String CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        String NUMS = "1234567890";
+        StringBuilder stringCode = new StringBuilder();
+        Random randomNumber = new Random();
+        String source = CHARS;
+        while (stringCode.length() < 12) {
+            int index = (int) (randomNumber.nextFloat() * source.length());
+            stringCode.append(source.charAt(index));
+            if(index > 4) {
+            	source = NUMS;
+            }
+        }
+        return stringCode.toString();
+    }
 	
 }

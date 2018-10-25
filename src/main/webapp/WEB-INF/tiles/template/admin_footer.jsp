@@ -16,7 +16,7 @@
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 					<h4 class="modal-title">
-						<spring:message code='chatWithClient' />
+						<spring:message code='msg.label.chat.client' />
 					</h4>
 				</div>
 			</div>
