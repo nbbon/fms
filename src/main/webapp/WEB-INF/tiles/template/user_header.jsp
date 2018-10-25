@@ -44,19 +44,24 @@
 						class="btn btn-default">|&nbsp; <spring:message code='msg.label.onlinesupport'/></a>
             </li>             
         </ul>
-        <form id="searchForm" method="post" action="flight/search" class="form-inline my-2 my-lg-0">
-        	<ul class="navbar-nav mr-auto">    
-				 <li class="nav-item">
-                	<a class="nav-link" href="?language=en">English</a>
-            	</li> 
-            	<li class="nav-item">
-                	<a class="nav-link" href="?language=vi_VN">Việt Nam</a>
-            	</li>
-			</ul>
-        </form>
+        <c:if test="${not empty SpecialBlurb}">
+	        <ul class="navbar-nav mr-auto">  
+	        	<li class="nav-item">
+	               	<p class="text-center text-warning">${SpecialBlurb}</p>
+	           	</li>
+        	</ul>
+        </c:if>
+       	<ul class="navbar-nav mr-auto">    
+			<li class="nav-item">
+               	<a class="nav-link" href="?language=en">English</a>
+           	</li> 
+           	<li class="nav-item">
+               	<a class="nav-link" href="?language=vi_VN">Việt Nam</a>
+           	</li>
+		</ul>
     </div>
 </nav>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<div class="container">
+<div id="container" class="container">
     <div class="row">   

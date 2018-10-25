@@ -26,14 +26,18 @@ public class NoticeInterceptor extends HandlerInterceptorAdapter {
 		Principal principal = request.getUserPrincipal();
 
 		if (principal != null) {
-			if (request.isUserInRole("ROLE_ADMIN"))
+			if (request.isUserInRole("ROLE_ADMIN")) {
 				userMessage = "Welcome, admin";
-			else
+			} else {
 				userMessage = "Keep up the good Work!! You're our #1 Passenger!";
+			}
+			modelAndView.getModelMap().addAttribute("SpecialBlurb", userMessage);
 		}
 
 		System.out.println("Calling postHandle");
-//		modelAndView.getModelMap().addAttribute("SpecialBlurb", userMessage);
+		if(modelAndView != null) {
+			modelAndView.getModelMap().addAttribute("SpecialBlurb", userMessage);
+		}
 		super.postHandle(request, response, handler, modelAndView);
 	}
 
