@@ -35,4 +35,10 @@ public class AirplaneServiceImpl implements AirplaneService {
     public void delete(Long id) {
         airplaneRepository.delete(id);
     }
+
+	@Override
+	public Long saveAirplane(Airplane airplane) {
+		Airplane savedAirplane = airplaneRepository.save(airplane);
+		return savedAirplane.getId();
+	}
 }

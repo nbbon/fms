@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.saigonese.fms.domain.Airplane;
 import com.saigonese.fms.domain.Category;
+import com.saigonese.fms.service.AirplaneService;
 import com.saigonese.fms.service.CategoryService;
 
 /**
  * 
- * @author Cong Khanh Tran - trancongkhanh@gmail.com
+ * @author Ba Bon Nguyen bnguyen@mum.edu
  *
  *
  */
@@ -22,12 +24,12 @@ import com.saigonese.fms.service.CategoryService;
 @RequestMapping("/admin/category")
 public class AdminCategoryController {
 	@Autowired
-	CategoryService categoryService;
+	AirplaneService airplaneService;
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public @ResponseBody Category addCategory(@Valid @RequestBody Category category) {
-		int categoryId = categoryService.save(category);
-		category.setId(categoryId);
-		return category;
+	public @ResponseBody Airplane addCategory(@Valid @RequestBody Airplane airplane) {
+		long airplaneId = airplaneService.saveAirplane(airplane);
+		airplane.setId(airplaneId);
+		return airplane;
 	}
 }

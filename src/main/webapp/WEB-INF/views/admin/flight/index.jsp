@@ -29,7 +29,7 @@
 			<c:forEach items="${flights}" var="flight">
 				<tr>
 					<td>${flight.flightnr}</td>
-					<td>${flight.origin.ariportCode} - ${flight.origin.city}</td>
+					<td>${flight.origin.airportCode} - ${flight.origin.city}</td>
 					<td>${flight.departureDate}</td>
 					<td>${flight.departureTime}</td>
 					<td>${flight.destination.airportCode} - ${flight.destination.city}</td>
