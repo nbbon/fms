@@ -136,5 +136,22 @@
 - Persistence in database [JPA]
 - DB: MySQL
 
+## Tools
+- Spring Tool Suite 4
+- Maven
+- GitHub
+
+## Project Guidelines
+### Setup MySQL
+- Create MySQL database schema "saigonese"
+- Grant schema previleges to root user
+- You may have to update username/password in "src/webapp/WEB-INF/spring/context/applicationContext.xml" [default used in the project: root/root]
+
+### To run the project
+- Import source into STS
+- Update project Maven dependencies (you may have to config add Maven dependencies into Deployment Assembly)
+- Build and run
+
+
 
 
