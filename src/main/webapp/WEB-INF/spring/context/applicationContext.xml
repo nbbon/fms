@@ -43,7 +43,7 @@
 		<property name="url"
 			value="jdbc:mysql://localhost:3306/saigonese?useSSL=false" />
 		<property name="username" value="root" />
-		<property name="password" value="root" />
+		<property name="password" value="" />
 	</bean>
 
 
