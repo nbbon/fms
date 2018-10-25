@@ -109,18 +109,16 @@
 
 ## Sequence Diagrams
 
-### User make a booking
-### User view booking detail
-### Admin Login
-### Admin Logout
-### Admin create new Airline
-### Admin create new Airplane
-### Admin create new Airport
-### Admin update Airline
-### Admin update Airplane
-### Admin update Airport
-### Admin schedule new flight
-### Admin update flight
+### For User
+- Make a booking
+- View booking detail
+- Call online support
+
+### For Admin user
+- Login & Logout
+- Create & Update Airline, Airplane, Airport
+- Schedule and Update flight
+- Online support user
 
 ## Technologies Used
 - Annotation
