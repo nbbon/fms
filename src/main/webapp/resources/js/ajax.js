@@ -30,8 +30,9 @@ function saveAirplane(){
 			console.log('errorObject', errorObject);
 			$('#result').show();
 			$('#success').hide();
+			$('#errors').html("");
 			if (errorObject.responseJSON.errorType == "ValidationError") {
-  			    var errorList = errorObject.responseJSON.errors;
+				var errorList = errorObject.responseJSON.errors;
  	 	        $.each(errorList,  function(i, error) {			   
  		    		$("#errors").append( error.message + '<br>');
 		    	});

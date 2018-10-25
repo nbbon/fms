@@ -40,7 +40,7 @@
 </div>
 <!-- /.modal -->
 <footer id="footerContainer" class="footer">
-	<div class="container">
+	<div class="container  panel-footer">
 		<span class="text-muted">Prof. Joe Bruen ::: Saigonese Group
 			(CS545)</span><span style="float: right;" class="text-muted">&copy
 			October 2018</span>
