@@ -22,19 +22,19 @@ public class Credentials {
 
 	@Id
 	@Column(name = "USERNAME", nullable = false, unique = true)
-	@NotEmpty
-	String username;
+	@NotEmpty(message = "{msg.error.required}")
+	private String username;
 
 	@Column(name = "PASSWORD", nullable = false)
-	@NotEmpty
+	@NotEmpty(message = "{msg.error.required}")
 	@PasswordFieldConstraint
-	String password;
+	private String password;
 	
 	@NotEmpty
 	@Transient
-	String verifyPassword;
+	private String verifyPassword;
 
-	Boolean enabled;
+	private Boolean enabled;
 
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "USERNAME", referencedColumnName = "USERNAME")

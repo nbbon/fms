@@ -1,3 +1,7 @@
+#container {
+    padding-bottom: 50px;
+}
+
 #footerContainer {
     position: fixed;
     height: 50px;

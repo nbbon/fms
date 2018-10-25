@@ -60,7 +60,7 @@ public class FlightController {
 		return "admin/flight";
 	}
 	
-	@RequestMapping(value = {"", "/", "/flights"}, method = RequestMethod.GET)
+	@RequestMapping(value = "/flights", method = RequestMethod.GET)
 	public String flights(Model model) {		
 		model.addAttribute("flights", flightService.findAll());
 		return "flight/index";
