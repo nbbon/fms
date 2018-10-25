@@ -32,23 +32,13 @@
                 <a class="nav-link" href="<spring:url value='/' />">|&nbsp; <spring:message code='msg.label.home'/></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; My Booking</a>
+                <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; <spring:message code='msg.label.mybooking'/></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="javascript:openOnlineSupport();"
 						class="btn btn-default">|&nbsp; <spring:message code='msg.label.onlinesupport'/></a>
             </li>             
-        </ul>
-        <form id="searchForm" method="post" action="flight/search" class="form-inline my-2 my-lg-0">
-        	<ul class="navbar-nav mr-auto">    
-				 <li class="nav-item">
-                	<a class="nav-link" href="?language=en">English</a>
-            	</li> 
-            	<li class="nav-item">
-                	<a class="nav-link" href="?language=vi_VN">Việt Nam</a>
-            	</li>
-			</ul>
-        </form>
+        </ul>      
     </div>
 </nav>
 <p>&nbsp;</p>
@@ -57,10 +47,10 @@
 	<section>
 		<div class="jumbotron">
 			<div class="container">
-				<h1 class="alert alert-info"> Thank you</h1>
-				<p>Thanks for the booking flight. Have a nice trip!</p>
-				<p>Your Confirmation Code is: <span class="text-success" style="font-size: 25px; font-weight: bold">${booking.confirmationCode}</span></p>
-				<a href="<spring:url value="/flights" />" class="btn btn-primary">Flights</a>			
+				<h1 class="alert alert-info"><spring:message code='msg.flow.title.thankyou'/></h1>
+				<p><spring:message code='msg.flow.title.niceTrip'/></p>
+				<p><spring:message code='msg.flow.title.cCode'/>: <span class="text-success" style="font-size: 25px; font-weight: bold">${booking.confirmationCode}</span></p>
+				<a href="<spring:url value="/flights" />" class="btn btn-primary"><spring:message code='msg.flow.title.flight'/></a>			
 			</div>
 		</div>
 	</section>

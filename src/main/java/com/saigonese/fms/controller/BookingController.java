@@ -1,6 +1,7 @@
 package com.saigonese.fms.controller;
 
 import java.util.List;
+import java.util.Random;
 
 import javax.validation.Valid;
 
@@ -49,6 +50,6 @@ public class BookingController {
 	@RequestMapping(value = "/booking/detail", method = RequestMethod.GET)
 	public String bookingDetail() {		
 		return "booking/detail";
-	}
+	}	
 
 }

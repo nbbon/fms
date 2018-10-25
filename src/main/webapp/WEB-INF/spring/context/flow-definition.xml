@@ -20,6 +20,8 @@
 	<flow:flow-registry id="bookingFlowRegistry" base-path="WEB-INF/flows">
 		<flow:flow-location id="booking" path="/booking-flow.xml" />
 	</flow:flow-registry>
+	
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
 
 </beans>
 		
