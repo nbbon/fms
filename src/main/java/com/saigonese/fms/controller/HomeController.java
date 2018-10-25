@@ -30,6 +30,7 @@ public class HomeController {
 	public String welcome(Authentication authentication) {
 //		model.addAttribute("flights", flightService.findAll());
 		if (authentication != null ) {
+			
 			Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
 	        if (roles.contains("ROLE_ADMIN")){
 	            return "redirect:/admin";

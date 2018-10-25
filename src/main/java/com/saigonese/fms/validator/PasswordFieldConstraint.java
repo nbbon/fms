@@ -23,7 +23,7 @@ import javax.validation.Payload;
 @Documented
 public @interface PasswordFieldConstraint {
 
-	String message() default "{PasswordNotValid}";
+	String message() default "{msg.error.password.invalid}";
 
     Class<?>[] groups() default {};
     
