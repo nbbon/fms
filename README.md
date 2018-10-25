@@ -1,7 +1,8 @@
 # Online Support
 
 ## Introduction
-	We are going to design and implement a online Flight Management and Booking project. This is an engineering proof of concept. It is not a planned marketable project. The goal is to exercise the Spring MVC technology according to the Web Application Architecture (WAA) course guidelines to validate its use in future projects.
+	We are going to design and implement a online Flight Management and Booking project. This is an engineering proof of concept. It is not a planned marketable project. 
+	The goal is to exercise the Spring MVC technology according to the Web Application Architecture (WAA) course guidelines to validate its use in future projects.
 
 ## Purpose
 	Online Flight Management and Booking is a web application which provides users the ability to view and make booking for a flight online. Once the booking is made, user can be able to view their booking information by providing the system their confirmation code [auto generated after successful] for security check. 
@@ -145,12 +146,13 @@
 ### Setup MySQL
 - Create MySQL database schema "saigonese"
 - Grant schema previleges to root user
-- You may have to update username/password in "src/webapp/WEB-INF/spring/context/applicationContext.xml" [default used in the project: root/root]
+- You may have to update username/password in "src/webapp/WEB-INF/spring/context/applicationContext.xml" [default used in the project: "root/root"]
 
 ### To run the project
 - Import source into STS
 - Update project Maven dependencies (you may have to config add Maven dependencies into Deployment Assembly)
 - Build and run
+- "admin/admin" is default username/password for loging to admin back-office
 
 
 
