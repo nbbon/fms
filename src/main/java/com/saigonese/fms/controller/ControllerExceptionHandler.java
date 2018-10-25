@@ -17,7 +17,7 @@ import com.saigonese.fms.domain.dto.DomainErrors;
 
 /**
  * Handler error for application
- * @author Cong Khanh Tran - trancongkhanh@gmail.com
+ * @author Ba Bon Nguyen - bnguyen@mum.edu
  *
  *
  */
@@ -43,6 +43,7 @@ public class ControllerExceptionHandler {
 		DomainErrors errors = new DomainErrors();
 		errors.setErrorType("ValidationError");
 		for (FieldError fieldError : fieldErrors) {
+			System.out.println(fieldError);
 			DomainError error = new DomainError(messageAccessor.getMessage(fieldError));
 			errors.addError(error);
 		}

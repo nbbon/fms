@@ -10,9 +10,14 @@ import java.util.List;
 
 @Entity
 public class Airplane implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 	@NotEmpty(message = "{msg.error.string.empty}")
 	private String serialNumber;
 	@NotEmpty(message = "{msg.error.string.empty}")
@@ -34,11 +39,11 @@ public class Airplane implements Serializable {
 	}
 
 	/* Getters and Setters */
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
