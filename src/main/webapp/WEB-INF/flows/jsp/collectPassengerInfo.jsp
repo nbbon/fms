@@ -29,15 +29,25 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">            
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='airport' />">|&nbsp; Home</a>
+                <a class="nav-link" href="<spring:url value='/' />">|&nbsp; <spring:message code='msg.label.home'/></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<spring:url value='airplane' />">|&nbsp; View Booking</a>
-            </li>            
+                <a class="nav-link" href="<spring:url value='/mybooking' />">|&nbsp; My Booking</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:openOnlineSupport();"
+						class="btn btn-default">|&nbsp; <spring:message code='msg.label.onlinesupport'/></a>
+            </li>             
         </ul>
         <form id="searchForm" method="post" action="flight/search" class="form-inline my-2 my-lg-0">
-            <input id="criteriaInput" name="criteria" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        	<ul class="navbar-nav mr-auto">    
+				 <li class="nav-item">
+                	<a class="nav-link" href="?language=en">English</a>
+            	</li> 
+            	<li class="nav-item">
+                	<a class="nav-link" href="?language=vi_VN">Việt Nam</a>
+            	</li>
+			</ul>
         </form>
     </div>
 </nav>
@@ -84,11 +94,12 @@
 
 </div>
 <!-- /.container -->
-<footer class="footer">
-    <div class="container">
-        <span class="text-muted">Prof. Joe Bruen ::: Saigonese Group (CS545)</span><span style="float:right;"
-                                                                                        class="text-muted">&copy October 2018</span>
-    </div>
+<footer id="footerContainer" class="footer">
+	<div class="container">
+		<span class="text-muted">Prof. Joe Bruen ::: Saigonese Group
+			(CS545)</span><span style="float: right;" class="text-muted">&copy
+			October 2018</span>
+	</div>
 </footer>
 
 <!-- Bootstrap core JavaScript

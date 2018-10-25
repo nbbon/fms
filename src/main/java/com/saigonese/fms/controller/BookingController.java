@@ -34,13 +34,13 @@ public class BookingController {
 	}
 	
 	@RequestMapping(value = "/mybooking", method = RequestMethod.POST)
-	public String getBooking(@RequestParam("cCode") String cCode, RedirectAttributes rAttributes, Model model) {
+	public String getBooking(@RequestParam("cCode") String cCode, RedirectAttributes rAttributes) {
 		Booking booking = bookingService.findBookingByCC(cCode);
 		if(booking != null) {
 			rAttributes.addFlashAttribute(booking);
 			return "redirect:/booking/detail";
 		}else {
-			model.addAttribute("cCode", cCode);
+			rAttributes.addFlashAttribute("cCode", cCode);			
 			return "redirect:/mybooking";
 		}
 		
