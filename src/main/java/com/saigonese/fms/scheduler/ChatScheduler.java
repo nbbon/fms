@@ -12,7 +12,7 @@ import com.saigonese.fms.service.ChatService;
 
 /**
  * 
- * @author Cong Khanh Tran - trancongkhanh@gmail.com
+ * @author Ba Bon Nguyen - bnguyen@mum.edu
  *
  *
  */
@@ -27,7 +27,7 @@ public class ChatScheduler {
 
 	/**
 	 * Invoked after bean creation is complete, this method will schedule
-	 * updatePriceAndBroacast every 1 second
+	 * update and broadcast to topic every 1 second
 	 */
 	@PostConstruct
 	@Scheduled(fixedDelay = 1000)

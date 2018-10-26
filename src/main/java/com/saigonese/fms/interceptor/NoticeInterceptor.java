@@ -40,12 +40,13 @@ public class NoticeInterceptor extends HandlerInterceptorAdapter {
 			if (request.isUserInRole("ROLE_ADMIN")) {
 				userMessage = messageAccessor.getMessage("msg.app.admin.blurb");
 			} else {
-				userMessage = messageAccessor.getMessage("msg.app.admin.blurb");
+				userMessage = messageAccessor.getMessage("msg.app.user.blurb");
 			}
 //			modelAndView.getModelMap().addAttribute("SpecialBlurb", userMessage);
 		}
 
 		System.out.println("Calling postHandle");
+		System.out.println("Special blurb message: " + userMessage);
 		if(modelAndView != null) {
 			modelAndView.getModelMap().addAttribute("SpecialBlurb", userMessage);
 		}
